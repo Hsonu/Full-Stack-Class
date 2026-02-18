@@ -14,10 +14,7 @@ body {
 }
 
 img {
-   
-   
-   
-   
+    
     width: 20vw;
 }
 
@@ -318,4 +315,8 @@ p {
     padding: 16px;
     width: 100%;
     overflow: hidden;
+}
+#ab{
+    display: flex;
+    position: relative;
 }
