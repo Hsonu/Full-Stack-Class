@@ -150,7 +150,6 @@ button:hover{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-
     background-image: linear-gradient(red, yellow);
 }
 
@@ -317,6 +316,8 @@ p {
     overflow: hidden;
 }
 #ab{
+    margin-top: 30rem;
     display: flex;
     position: relative;
+
 }
