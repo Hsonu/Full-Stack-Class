@@ -1,11 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Natural Green</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
+
+<link rel="stylesheet" href="style.css">
+
 <body>
-    
+    <header>
+        <div id="mainTop">
+            <img class="Instagram" src="/icon/Instagram.png">
+        </div>
+        <div>
+            <div id="heading">
+                <img src="https://thenaturalgreens.com/wp-content/uploads/2025/07/The-Natural-Greens-logo.png#2644">
+                <input placeholder="Search" type="text">
+
+                <div id="icon">
+                    <img class="HeartIcon" src="./icon/HeartIcon.png">
+                    <img class="CartIcon" src="https://img.icons8.com/?size=100&id=82712&format=png&color=000000">
+                    <a href="./login-page.html"> <img class="AccountIcon" src="./icon/AccountIcon.png"></a>
+                </div>
+                <div class="icon">
+                    <img class="icon" src="./icon/Manu.png">
+                </div>
+                <div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active">Home</li>
+                    <li>Plants↓</li>
+                    <li>Pots↓</li>
+                    <li>Combos</li>
+                    <li>Colliections</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="hero-selection" style="margin-top:12%;">
+            <div>
+                <b>
+                    <p>Shope by Category</p>
+                </b>
+            </div>
+            <div id="allcategory">
+                <img class="category" src="https://api.thenaturalgreens.in/uploads/image-1770286435936-817344288.png">
+                <img class="category" src="https://api.thenaturalgreens.in/uploads/image-1770286850448-187003834.png">
+                <img class="category" src="https://api.thenaturalgreens.in/uploads/image-1770288629529-479581621.png">
+                <img class="category" src="https://api.thenaturalgreens.in/uploads/image-1770289525217-67690589.png">
+            </div>
+        </section>
+        <section>
+            <div id="slider">
+                <div class="allpohto">
+
+                    <img class="photo"
+                        src="https://static.vecteezy.com/system/resources/previews/047/149/490/large_2x/serene-green-meadow-under-clear-blue-sky-nature-background-with-copy-space-8krealistic-quality-photo.jpg">
+                    <img class="photo" src="./photo/photo1.jpg">
+                    <img class="photo"
+                        src="https://www.shutterstock.com/shutterstock/photos/2529947923/display_1500/stock-photo-perfect-green-fields-in-an-agricultural-area-and-cultivated-fields-on-a-sunny-day-agronomic-2529947923.jpg">
+                    <img class="photo"
+                        src="https://static.vecteezy.com/system/resources/previews/047/149/490/large_2x/serene-green-meadow-under-clear-blue-sky-nature-background-with-copy-space-8krealistic-quality-photo.jpg">
+                    <img class="photo"
+                        src="https://www.shutterstock.com/shutterstock/photos/2667007015/display_1500/stock-photo-awesome-summer-view-on-biograd-lake-location-place-national-park-biogradska-gora-montenegro-2667007015.jpg">
+
+                    <img class="photo"
+                        src="https://www.shutterstock.com/shutterstock/photos/2679155357/display_1500/stock-photo-stunning-palm-leaves-macro-closeup-fresh-green-nature-background-artistic-blur-and-bokeh-lush-2679155357.jpg">
+
+                </div>
+            </div>
+        </section>
+        <section style="margin-top: 6vh;">
+            <b>
+                <p class="Handpicked" style="color: green;">Handpicked for you</p>
+            </b>
+            <b>
+                <P class="Handpicked" style="font-size: 2vw;">Featured Plants</P>
+            </b>
+        </section>
+        <section>
+            <div id="producat">
+                <div id="allproducat">
+
+                    <img class="producat1"
+                        src="https://api.thenaturalgreens.in/uploads/image-1771082275570-945347013.png">
+                    <p>Hangin Chain Pot 6"</p>
+                    <P class="price">0$</P>
+                    <button>Buy</button>
+                </div>
+                <div id="allproducat">
+                    <img class="producat1"
+                        src="https://api.thenaturalgreens.in/uploads/image-1771082275570-945347013.png">
+                    <p>Hangin Chain Pot 6"</p>
+                    <P class="price">0$</P>
+                    <button>Buy</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let icon = document.querySelector(".icon");
+        let ul = document.querySelector("ul");
+        icon.addEventListener("click", () => {
+            ul.classList.toggle("menu1");
+            console.log("menu1");
+        });
+    </script>
 </body>
+
 </html>

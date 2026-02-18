@@ -1,0 +1,317 @@
+:root {
+    --nav-height: 80px;
+    --tw-gradient-to-position: ;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    width: 20vw;
+}
+
+
+::placeholder {
+    color: black;
+    font-size: 2.5vh;
+}
+
+#heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+input {
+    color: black;
+    width: 38vw;
+    height: 4.2vh;
+    padding: 1vh;
+    border: 1px solid rgb(236, 227, 227);
+    background-color: rgba(233, 233, 233, 0.5);
+}
+
+.HeartIcon,
+.CartIcon,
+.AccountIcon {
+    display: flex;
+    height: 4.5vh;
+    width: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+#icon {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 15vw;
+    height: 2vh;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(233, 233, 233, 0.5);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    font-size: 3.5vh;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+li {
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+#mainTop {
+    background-color: black;
+    color: aliceblue;
+}
+
+.Instagram {
+    height: 2vw;
+    width: auto;
+    padding: 1vh;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    border: 1px solid rgb(44, 134, 105);
+    box-shadow: 0.1px 0.1px 2px;
+    z-index: 9;
+}
+
+#producat {
+    display: flex;
+    flex-wrap: wrap;
+    height: 12px;
+    width: auto;
+    gap: 30px;
+    /* position: relative;
+        top: 23vh; */
+}
+
+.producat1 {
+    /* border: 1.5px solid black; */
+    display: flex;
+    width: auto;
+    height: 40vh;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    gap: 10px;
+    align-items: center;
+}
+
+.producat1:hover {
+    box-shadow: 0px 2px 5px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1vh;
+    background: linear-gradient(90deg, #ffe51fff, #ffcd03ff);
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 20px;
+    width: 6rem;
+    align-self: flex-end;
+    box-shadow: 1px 1px 10px;
+}
+button:hover{
+    border: 2px solid black;
+}
+
+.allproducat {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    background-image: linear-gradient(red, yellow);
+}
+
+.allproducatImg {
+    height: 25vh;
+    width: auto;
+    cursor: pointer;
+}
+
+header {
+    backdrop-filter: blur(12px) saturate(180%);
+    background-color: aliceblue;
+    position: fixed;
+    top: 0px;
+
+}
+
+.icon {
+    height: 4.5vh;
+    width: auto;
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
+
+li:hover {
+    color: rgb(5, 250, 5);
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 768px) {
+    ul {
+        display: none !important;
+    }
+
+    .icon {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .menu1 {
+        display: flex !important;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+
+    li:hover {
+        color: rgb(5, 250, 5);
+        border-bottom: 2px solid rgb(0, 0, 0);
+    }
+
+}
+
+#productSection {
+    /* margin-top: 8rem; */
+    margin-top: 8em;
+}
+
+#hero-section {
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.95) 95%, #fff 100%), url("https://www.raindental.co.in/assets/images/IntWhite.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: var(--nav-height);
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 2vw;
+    margin-left: 20px;
+    margin-top: 10PX;
+}
+
+.category {
+    height: 6vw;
+    min-height: auto;
+    width: auto;
+    flex-wrap: wrap;
+    margin: 1vw;
+    cursor: pointer;
+}
+
+.category:hover {
+    border: 2px solid black;
+    border-radius: 50%;
+    border-color: greenyellow;
+}
+
+.photo {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 50vh;
+    /* border-radius: 30px; */
+    box-shadow: -2px -1px 20px 3px;
+    margin:10px;
+    border-radius:15px;
+}
+
+
+.Handpicked {
+    /* margin-top: 50px; */
+    font-size: 3vh;
+    text-transform: uppercase;
+}
+
+#allproducat {
+    padding: 20px;
+    /* border: 1px solid black; */
+    flex-direction: column;
+    display: flex;
+    width: auto;
+    background-image: linear-gradient(#ffffff5c, #6df17dd1);
+    border-radius: 10%;
+}
+
+.producat1 {
+    background-color: #fff;
+    border-radius: 10%;
+    align-self: center;
+    height: auto;
+    width: 40vw;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.price {
+    font-size: 2vw;
+    color:black;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 2px;
+    font-style: normal;
+}
+
+.allpohto {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    position: relative;
+    animation: allpohto 4s linear infinite;
+    margin-left: 10px;
+    width: 40vw;
+    
+}
+@keyframes allpohto {
+    from {transform:translateX(0);}
+    to {transform: translate(-50%);}
+}
+#slider{
+    padding: 16px;
+    width: 100%;
+    overflow: hidden;
+}
