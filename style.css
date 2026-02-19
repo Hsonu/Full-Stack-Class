@@ -103,11 +103,10 @@ header {
 #producat {
     display: flex;
     flex-wrap: wrap;
-    height: 12px;
+    /* height: 12px; */
     width: auto;
     gap: 30px;
-    /* position: relative;
-        top: 23vh; */
+    
 }
 
 .producat1 {
@@ -151,6 +150,7 @@ button:hover{
     flex-wrap: wrap;
     gap: 20px;
     background-image: linear-gradient(red, yellow);
+    flex-direction: column;
 }
 
 .allproducatImg {
@@ -315,9 +315,51 @@ p {
     width: 100%;
     overflow: hidden;
 }
-#ab{
-    /* margin-top: 30rem; */
-    display: flex;
-    position: relative;
-
+main{
+    padding: 2rem;
 }
+ #Desk{
+    display: flex;
+    font-size: 2vw;
+ }
+
+ #OFFICE , #Shope ,#Desk{
+    text-transform: uppercase;
+    margin: 1vw;
+    padding: 0.5vw;
+ }
+
+ #Desk{
+    font-size: 2vw;
+ }
+  #OFFICE , #Shope{
+    font-size: 1.5vw;
+  }
+  .table , .table2{
+    background-color:#E3F2FD;
+    width: 50%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw;
+    
+  }
+  .table:hover{
+     box-shadow: 0px 0px 4px 0px;
+  }
+  .table2:hover{
+   box-shadow: 0px 0px 4px 0px; 
+   background-color: rgb(252, 228, 236);
+  }
+  .table2{
+    color: rgb(194, 24, 91);
+  }
+  #Desk-photo{
+    height: 28vh;
+    width: auto;
+    align-self: center;
+  }
+  #manu-main{
+    display: flex;
+    flex-direction: row;
+  }
