@@ -143,6 +143,7 @@ button {
 }
 button:hover{
     border: 2px solid black;
+    background-color: greenyellow;
 }
 
 .allproducat {
@@ -365,4 +366,21 @@ main{
   #manu-main{
     display: flex;
     flex-direction: row;
+  }
+  .f-card{
+    background-color:#e5e7eb;
+    border-radius: 10%;
+  }
+  #f-producat{
+      display: flex;
+    flex-wrap: wrap;
+    /* height: 12px; */
+    width: auto;
+    gap: 30px;
+
+  }
+  .button1{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   }
