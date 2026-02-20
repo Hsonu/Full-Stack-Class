@@ -307,9 +307,13 @@ p {
     
 }
 @keyframes allpohto {
-    from {transform:translateX(0);}
-    to {transform: translate(-50%);}
+    0% {transform:translateX(0);}
+    25%  { transform:translateX(-100%);}
+    50% { transform:translateX(-50%);}
+    100% {transform: translateX(0);}
 }
+
+
 #slider{
     padding: 16px;
     width: 100%;
@@ -350,6 +354,7 @@ main{
   .table2:hover{
    box-shadow: 0px 0px 4px 0px; 
    background-color: rgb(252, 228, 236);
+   box-shadow: 0px 0px 4px 0px black;
   }
   .table2{
     color: rgb(194, 24, 91);
