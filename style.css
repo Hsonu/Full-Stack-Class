@@ -391,5 +391,5 @@ padding: 1.2vw;
    
 #Start{
     display: flex;
-    width: 100px;
+    justify-content: center;
 }
