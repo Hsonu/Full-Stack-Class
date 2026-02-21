@@ -15,7 +15,7 @@ body {
 }
 
 img {
-    
+
     width: 20vw;
 }
 
@@ -52,6 +52,7 @@ input {
     cursor: pointer;
 }
 
+#MenuButton,
 #icon {
     display: flex;
     justify-content: space-between;
@@ -67,7 +68,7 @@ nav {
     border-top: 1px solid rgba(233, 233, 233, 0.5);
 }
 
-ul {
+#f-n {
     display: flex;
     list-style: none;
     gap: 10px;
@@ -101,16 +102,16 @@ header {
     z-index: 9;
 }
 
-#producat {
+#product {
     display: flex;
     flex-wrap: wrap;
     /* height: 12px; */
     width: auto;
     gap: 30px;
-    
+
 }
 
-.producat1 {
+.product1 {
     display: flex;
     width: auto;
     height: 40vh;
@@ -122,7 +123,7 @@ header {
     align-items: center;
 }
 
-.producat1:hover {
+.product1:hover {
     box-shadow: 0px 2px 5px;
 }
 
@@ -132,7 +133,7 @@ header {
     align-items: center;
     text-align: center;
     padding: 1vh;
-       background-color: rgb(227, 255, 227);
+    background-color: rgb(227, 255, 227);
     border: none;
     cursor: pointer;
     border-radius: 8px;
@@ -141,13 +142,14 @@ header {
     align-self: flex-end;
     box-shadow: 1px 1px 10px;
 }
-#buy:hover{
+
+#buy:hover {
     color: #fff;
-     border: 2px solid rgb(0, 255, 21);
+    border: 2px solid rgb(0, 255, 21);
     background-color: rgb(80, 255, 80);
 }
 
-.allproducat {
+.allproduct {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -169,7 +171,7 @@ header {
 
 }
 
-.icon {
+.MenuButton {
     height: 4.5vh;
     width: auto;
     display: none;
@@ -184,17 +186,22 @@ li:hover {
 }
 
 @media only screen and (max-width: 768px) {
-    ul {
-        display: none !important;
+    #f-n {
+        display: none;
+        z-index: 9;
     }
 
-    .icon {
+    #f-n.menu1 {
+        display: flex;
+    }
+
+    .MenuButton {
         display: flex;
         cursor: pointer;
     }
 
     .menu1 {
-        display: flex !important;
+        display: flex;
         justify-content: center;
         align-content: center;
         flex-direction: column;
@@ -255,8 +262,8 @@ p {
     height: 50vh;
     /* border-radius: 30px; */
     box-shadow: -2px -1px 20px 3px;
-    margin:10px;
-    border-radius:15px;
+    margin: 10px;
+    border-radius: 15px;
 }
 
 
@@ -266,7 +273,7 @@ p {
     text-transform: uppercase;
 }
 
-#allproducat {
+#allproduct {
     padding: 20px;
     /* border: 1px solid black; */
     flex-direction: column;
@@ -276,7 +283,7 @@ p {
     border-radius: 10%;
 }
 
-.producat1 {
+.product1 {
     background-color: #fff;
     border-radius: 10%;
     align-self: center;
@@ -290,7 +297,7 @@ p {
 
 .price {
     font-size: 2vw;
-    color:black;
+    color: black;
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-weight: 2px;
@@ -306,90 +313,217 @@ p {
     animation: allpohto 8s linear infinite;
     margin-left: 10px;
     width: 40vw;
-    
-}
-@keyframes allpohto {
-    0% {transform:translateX(0);}
-    50%  { transform:translateX(-50%);}
-    100% { transform:translateX(0);}
+
 }
 
-#slider{
-    padding-top:16px;
+@keyframes allpohto {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#slider {
+    padding-top: 16px;
     width: 100%;
     overflow: hidden;
 }
- #Desk{
+
+#Desk {
     display: flex;
     font-size: 2vw;
- }
+}
 
- #OFFICE , #Shope ,#Desk{
+#OFFICE,
+#Shope,
+#Desk {
     text-transform: uppercase;
     margin: 1vw;
     padding: 0.5vw;
- }
+}
 
- #Desk{
+#Desk {
     font-size: 2vw;
- }
-  #OFFICE , #Shope{
+}
+
+#OFFICE,
+#Shope {
     font-size: 1.5vw;
-  }
-  .table , .table2{
-    background-color:#E3F2FD;
+}
+
+.table,
+.table2 {
+    background-color: #E3F2FD;
     width: 50%;
     border-radius: 15px;
     display: flex;
     justify-content: space-between;
     margin: 1vw;
-    
-  }
-  .table:hover{
-     box-shadow: 0px 0px 4px 0px;
-  }
-  .table2:hover{
-   box-shadow: 0px 0px 4px 0px; 
-   background-color: rgb(252, 228, 236);
-   box-shadow: 0px 0px 4px 0px black;
-  }
-  .table2{
+
+}
+
+.table:hover {
+    box-shadow: 0px 0px 4px 0px;
+}
+
+.table2:hover {
+    box-shadow: 0px 0px 4px 0px;
+    background-color: rgb(252, 228, 236);
+    box-shadow: 0px 0px 4px 0px black;
+}
+
+.table2 {
     color: rgb(194, 24, 91);
-  }
-  #Desk-photo{
+}
+
+#Desk-photo {
     height: 28vh;
     width: auto;
     align-self: center;
-  }
-  #manu-main{
+}
+
+#manu-main {
     display: flex;
     flex-direction: row;
-  }
-  .f-card{
-padding: 1.2vw;
-    background-color:#e5e7eb;
+}
+
+.f-card {
+    padding: 1.2vw;
+    background-color: #e5e7eb;
     border-radius: 10%;
-  }
-  #f-producat{
-      display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#f-producat {
+    display: flex;
     flex-wrap: wrap;
-    /* height: 12px; */
     width: auto;
     gap: 30px;
 
-  }
-  .button1{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  }
+}
 
-    #join , #become {
+.button1 {
     display: flex;
     justify-content: center;
-  }
-   
-#Start{
+    flex-wrap: wrap;
+}
+
+#join,
+#become {
     display: flex;
     justify-content: center;
+
+}
+
+#Start {
+    display: flex;
+    justify-content: center;
+    padding: 3vh;
+    height: 2rem;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    text-align: center;
+    flex-direction: column;
+    color: #fff;
+    box-shadow: 0px 0px 13px 3px;
+    width: 13vw;
+}
+
+#join {
+    color: #9CA3AF;
+    font-size: 1.5vw;
+    gap: 100px;
+}
+
+#Start1 {
+    display: flex;
+    justify-content: center;
+}
+
+#become {
+    margin: 0;
+    font-size: 2vw;
+}
+
+#main-end {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    margin-top: 1rem;
+    background-color: greenyellow;
+    border-radius: 10px;
+    width: 95vw;
+    gap: 1vw;
+    padding: 1vw;
+}
+
+#last-end2,
+#main-end1 {
+    display: flex;
+    justify-content: center;
+}
+
+#Start:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 13px 3px;
+    cursor: pointer;
+}
+
+#last-end {
+    padding: 0.1rem;
+    display: flex;
+    /* justify-content: center; */
+    background-color: rgb(101, 147, 101);
+    width: 95vw;
+    justify-content: space-around;
+    border-radius: 10px;
+    margin-top: 1vh;
+}
+
+.last-end1 {
+    font-size: 1.1vw;
+    text-transform: uppercase;
+}
+
+#f-img {
+    height: 5vw;
+    width: auto;
+    flex-wrap: wrap;
+}
+
+#p1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    font-size: large;
+}
+
+#d-img {
+
+    display: flex;
+}
+
+.li-end {
+    display: flex;
+    flex-direction: column;
+}
+
+#main-li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 4vw;
+    font-size: 1.5vw;
 }
