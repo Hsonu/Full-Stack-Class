@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="mainTop">
+            <img class="Instagram" src="/icon/Instagram.png">
+        </div>
+        <div>
+            <div id="heading">
+                <img src="https://thenaturalgreens.com/wp-content/uploads/2025/07/The-Natural-Greens-logo.png#2644">
+                <input placeholder="Search" type="text">
+
+                <div id="icon">
+                    <img class="HeartIcon" src="../icon/HeartIcon.png">
+                    <img class="CartIcon" src="https://img.icons8.com/?size=100&id=82712&format=png&color=000000">
+                    <a href="./login-page.html"> <img class="AccountIcon" src="../icon/AccountIcon.png"></a>
+                </div>
+                <div class="icon">
+                    <img class="MenuButton" src="../icon/Manu.png">
+                </div>
+                <div>
+                </div>
+            </div>
+            <nav>
+                <ul id="f-n">
+                    <li class="active">Home</li>
+                    <li>Plants↓</li>
+                    <li>Pots↓</li>
+                    <li>Combos</li>
+                    <li>Collections</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main style="margin-top: 13%;">
+        <div>
+            <section>
+                <div id="product-card">
+                    <img id="card-img"  src="https://api.thenaturalgreens.in/uploads/image-1771082275570-945347013.png">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        let icon = document.querySelector(".MenuButton");
+        let ul = document.querySelector("#f-n");
+        icon.addEventListener("click", () => {
+            ul.classList.toggle("menu1");
+            console.log("menu1");
+        });
+    </script>
+</body>
+
+</html>

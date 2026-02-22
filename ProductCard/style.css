@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#mainTop {
+    background-color: black;
+    color: aliceblue;
+}
+.Instagram {
+    height: 2vw;
+    width: auto;
+    padding: 1vh;
+}
+header {
+    position: fixed;
+    width: 100%;
+    border: 1px solid rgb(44, 134, 105);
+    box-shadow: 0.1px 0.1px 2px;
+    background-color: azure;
+
+}
+.HeartIcon,
+.CartIcon,
+.AccountIcon {
+    display: flex;
+    height: 4.5vh;
+    width: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+#MenuButton,
+#icon {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 15vw;
+    height: 2vh;
+}
+#f-n {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    font-size: 3.5vh;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+img {
+
+    width: 20vw;
+}
+input {
+    color: black;
+    width: 38vw;
+    height: 4.2vh;
+    padding: 1vh;
+    border: 1px solid rgb(236, 227, 227);
+    background-color: rgba(233, 233, 233, 0.5);
+}
+.MenuButton {
+    height: 4.5vh;
+    width: auto;
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
+@media only screen and (max-width: 768px) {
+    #f-n {
+        display: none;
+        z-index: 9;
+    }
+
+    #f-n.menu1 {
+        display: flex;
+    }
+
+    .MenuButton {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .menu1 {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+
+    li:hover {
+        color: rgb(5, 250, 5);
+        border-bottom: 2px solid rgb(0, 0, 0);
+    }
+
+}
+#heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(233, 233, 233, 0.5);
+}
+li:hover {
+    color: rgb(5, 250, 5);
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+header {
+    position: fixed;
+    width: 100%;
+    border: 1px solid rgb(44, 134, 105);
+    box-shadow: 0.1px 0.1px 2px;
+    z-index: 9;
+    top: 0;
+}
+#mainTop {
+    background-color: black;
+    color: aliceblue;
+}
+#product-card{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    background-color: #fff  
+}
+#card-img{
+    height: 60vh;
+    width: 40vw;
+    object-fit: cover;
+}
