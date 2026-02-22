@@ -1,16 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
 #mainTop {
     background-color: black;
     color: aliceblue;
 }
+
 .Instagram {
     height: 2vw;
     width: auto;
     padding: 1vh;
 }
+
 header {
     position: fixed;
     width: 100%;
@@ -19,6 +22,7 @@ header {
     background-color: azure;
 
 }
+
 .HeartIcon,
 .CartIcon,
 .AccountIcon {
@@ -29,6 +33,7 @@ header {
     flex-wrap: wrap;
     cursor: pointer;
 }
+
 #MenuButton,
 #icon {
     display: flex;
@@ -37,6 +42,7 @@ header {
     width: 15vw;
     height: 2vh;
 }
+
 #f-n {
     display: flex;
     list-style: none;
@@ -50,6 +56,7 @@ img {
 
     width: 20vw;
 }
+
 input {
     color: black;
     width: 38vw;
@@ -58,6 +65,7 @@ input {
     border: 1px solid rgb(236, 227, 227);
     background-color: rgba(233, 233, 233, 0.5);
 }
+
 .MenuButton {
     height: 4.5vh;
     width: auto;
@@ -66,6 +74,7 @@ input {
     align-items: center;
     text-align: center;
 }
+
 @media only screen and (max-width: 768px) {
     #f-n {
         display: none;
@@ -94,22 +103,26 @@ input {
     }
 
 }
+
 #heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
+
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
     border-top: 1px solid rgba(233, 233, 233, 0.5);
 }
+
 li:hover {
     color: rgb(5, 250, 5);
     border-bottom: 2px solid rgb(0, 0, 0);
 }
+
 header {
     position: fixed;
     width: 100%;
@@ -118,18 +131,243 @@ header {
     z-index: 9;
     top: 0;
 }
+
 #mainTop {
     background-color: black;
     color: aliceblue;
 }
-#product-card{
+
+#product-card {
     width: 50%;
     display: flex;
     justify-content: center;
-    background-color: #fff  
+    background-color: #fff
 }
-#card-img{
+
+#card-img {
     height: 60vh;
     width: 40vw;
     object-fit: cover;
+}
+
+#main2-card {
+    display: flex;
+    flex-direction: row;
+}
+
+#p-first,
+#p-first1 {
+    font-size: 1.3vw;
+    color: #a0a0a0;
+}
+
+#h-card {
+    font-size: 3vw;
+}
+
+#p-first1 {
+    margin-top: 2vh;
+
+}
+
+.c-btn {
+    padding: 0.3vw;
+    border: none;
+    background-color: #ebebeb;
+    border-radius: 8px;
+    gap: 1px;
+    margin: 0.5vw;
+    color: #545353;
+    font-size: 1vw;
+    width: 10vw;
+    cursor: pointer;
+    height: auto;
+}
+
+.c-btn:hover {
+    color: black
+}
+
+#b-c-main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#price {
+    font-size: 4vw;
+    color: black;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 2px;
+    font-style: normal;
+}
+
+#f-c-btn1,
+#f-c-btn {
+    padding: 1vw;
+    width: 25vw;
+    border: none;
+    border: 1px solid rgb(60, 250, 140);
+    border-radius: 12px;
+}
+
+#f-c-btn1 {
+    color: white;
+    border: 2px solid rgb(17 24 39);
+    font-size: 1.5vw;
+    box-shadow: 1px 1px 7px 0px rgb(17 24 39);
+    color: black;
+}
+
+#f-c-btn1:hover {
+    background-color: rgb(17 24 39);
+    color: white;
+    cursor: pointer
+}
+
+#f-c-btn {
+    font-size: 1.5vw;
+    border: 2px solid rgb(60, 250, 140);
+    box-shadow: 1px 1px 7px 0px rgb(60, 250, 140)
+}
+
+#f-c-btn:hover {
+    background-color: rgb(60, 250, 140);
+    cursor: pointer;
+}
+
+#c-p {
+    display: flex;
+    gap: 1vh;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(239 246 255);
+    margin-top: 2vw;
+    background-color: rgb(239 246 255);
+    padding: 1vw;
+    border-radius: 20px;
+}
+
+#f-producat {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    gap: 30px;
+    margin-top: 1vw;
+}
+
+.f-card {
+    padding: 1.2vw;
+    background-color: #e5e7eb;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-name {
+    font-size: 2vw;
+    margin-left: 20px;
+    margin-top: 10PX;
+}
+
+.price {
+    font-size: 2vw;
+    color: black;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 2px;
+    font-style: normal;
+}
+
+.button1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1vh;
+    background-color: rgb(227, 255, 227);
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 2vw;
+    width: 10vw;
+    align-self: flex-end;
+    box-shadow: 1px 1px 10px;
+}
+
+#buy:hover {
+    color: #fff;
+    border: 2px solid rgb(0, 255, 21);
+    background-color: rgb(80, 255, 80);
+}
+
+.product1:hover {
+    box-shadow: 0px 2px 5px;
+}
+
+.product1 {
+    background-color: #fff;
+    border-radius: 10%;
+    align-self: center;
+    height: 15vw;
+    width: 15vw;
+    object-fit: cover;
+}
+
+#n-p-card-h {
+    margin-top: 3vw;
+    font-size: 3vw;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+#l-c-p {
+    margin-top: 2vw;
+    font-size: 3vw;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+#p1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    font-size: 1.5vw;
+}
+
+#main-li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 4vw;
+    font-size: 1.5vw;
+}
+
+.li-end {
+    display: flex;
+    flex-direction: column;
+}
+
+#f-img {
+    height: 5vw;
+    width: auto;
+    flex-wrap: wrap;
+}
+
+#d-img {
+    display: flex;
+}
+footer{
+    background-color: #dcdcdc;
+    margin-top: 2vw;
+    padding: 2vw;
+}
+.p-box{
+    font-size: 2vw;
 }

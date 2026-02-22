@@ -293,7 +293,7 @@ li:hover {
     height: 300px;
     object-fit: cover;
     object-position: center;
-    
+
 }
 
 .price {
@@ -530,8 +530,14 @@ li:hover {
     gap: 4vw;
     font-size: 1.5vw;
 }
-.product-name{
-        font-size: 2vw;
+
+.product-name {
+    font-size: 2vw;
     margin-left: 20px;
     margin-top: 10PX;
+}
+footer{
+    background-color: #dcdcdc;
+    margin-top: 2vw;
+    padding: 2vw;
 }
