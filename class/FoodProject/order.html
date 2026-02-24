@@ -19,7 +19,9 @@
             color: white;
             padding: 1vw;
             width: auto;
-            box-shadow: 2px 1px 20px 0px red;
+            /* box-shadow: 2px 1px 20px 0px red; */
+            border-bottom: 2px solid red;
+
         }
 
         #Order {
@@ -52,6 +54,7 @@
             justify-content: center;
             height: auto;
             width: 100%;
+            margin-top: 5vw;
         }
 
         #input-manu {
@@ -61,9 +64,10 @@
             width: auto;
             border: 1px solid black;
             padding: 2vw;
-            background-color: rgba(218, 204, 204, 0.416);
+            background-color: rgba(218, 204, 204, 0);
             color: white;
             border-radius: 10px;
+            backdrop-filter: blur(2px);
         }
 
         .p-input {
@@ -103,6 +107,36 @@
             color: white;
             cursor: pointer;
             border-radius: 10px;
+        }
+
+        @media only screen and (max-width: 450px) {
+            main {
+                height: 100vh;
+            }
+
+            section {
+                height: 90vh;
+            }
+
+            #heading {
+                font-size: 3.0vw;
+                display: flex;
+                justify-content: center;
+                background-color: rgb(60, 60, 60);
+                color: white;
+                padding: 1vw;
+                width: auto;
+                border-bottom: 2px solid red;
+            }
+
+            #manu {
+                height: 90%;
+                display: flex;
+                justify-content: center;
+                height: auto;
+                width: 100%;
+                margin-top: 6vw;
+            }
         }
     </style>
 </head>
