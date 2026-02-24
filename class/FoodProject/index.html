@@ -46,11 +46,108 @@
             background-size: cover;
             background-attachment: fixed;
         }
-        a{
+
+        a {
             color: white;
             text-decoration: none;
         }
-        
+
+        #Manu-icon {
+            display: none;
+        }
+
+        @media only screen and (max-width: 450px) {
+            main {
+                width: auto;
+                display: flex;
+                justify-content: center;
+            }
+
+            section {
+                height: 90vh;
+            }
+
+            #heading {
+                font-size: 3.0vw;
+                display: flex;
+                justify-content: center;
+                background-color: rgb(60, 60, 60);
+                color: white;
+                padding: 1vw;
+                width: auto;
+                border-bottom: 2px solid red;
+            }
+
+            #manu {
+                height: 90%;
+                display: flex;
+                justify-content: center;
+                height: auto;
+                width: 100%;
+                margin-top: 6vw;
+            }
+
+            input {
+                padding: 2vw;
+                width: 20vw;
+                background-color: rgba(255, 255, 255, 0.491);
+                border-radius: 10px;
+                border: 1px solid white;
+                width: 100%;
+            }
+
+            #input-manu {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 50vw;
+                border: 1px solid black;
+                padding: 6vw;
+                background-color: rgba(218, 204, 204, 0);
+                color: white;
+                border-radius: 10px;
+                backdrop-filter: blur(2px);
+                gap: 10px;
+            }
+
+            .p-input {
+                display: flex;
+                font-size: 5vw;
+                justify-content: center;
+                color: rgb(31, 36, 31);
+
+            }
+
+            #saveButton {
+                padding: 10px;
+                font-size: 3vw;
+            }
+
+            #Order {
+                display: none;
+            }
+
+            .menu1 {
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                flex-direction: column;
+            }
+
+            #Manu-icon {
+                display: flex;
+                height: 8vw;
+            }
+
+            .Order1 {
+                font-size: 6vw;
+            }
+
+            .menu1 {
+                display: flex !important;
+            }
+
+        }
     </style>
 </head>
 
@@ -63,6 +160,9 @@
                         <h1>🍕 Fresh & Tasty Food, Anytime🍳</h1>
                     </b>
                     <div>
+                        <img id="Manu-icon" src="./food/Manu.png">
+                    </div>
+                    <div>
                         <div id="Order">
                             <a href="./order.html">
                                 <p class="Order1">Add Order</p>
@@ -74,11 +174,19 @@
                 </div>
             </div>
     </header>
-    <main>
-        <section>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
 
-        </section>
-    </main>
+            let icon = document.querySelector("#Manu-icon");
+            let Order = document.querySelector("#Order");
+
+            icon.addEventListener("click", () => {
+                Order.classList.toggle("menu1");
+                console.log(Order);
+            });
+
+        });
+    </script>
 </body>
 
 </html>
