@@ -150,6 +150,7 @@
                 border-radius: 10px;
                 border: 1px solid white;
                 width: 100%;
+                align-self: center;
             }
 
             #input-manu {
@@ -202,6 +203,24 @@
             .menu1 {
                 display: flex !important;
             }
+        }
+
+        #map {
+            display: flex;
+            justify-content: center;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+
+        iframe {
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        #section1{
+            display: flex;
+            justify-content: center;
+            margin-top: 2vw;
 
         }
     </style>
@@ -244,6 +263,15 @@
                     <p class="p-input">Total Amount</p><input placeholder="Total Amount" readonly>
                     <button id="saveButton" type="button">Save</button>
                 </div>
+            </div>
+        </section>
+        <section id="section1">
+            <div id="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7539.422547785175!2d72.8636495516228!3d19.1203182288173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c93a0bbfdf75%3A0x43eab25d6aca117a!2sRaj%20computers%20academy%20-%20Andheri%20east!5e0!3m2!1sen!2sin!4v1772023363186!5m2!1sen!2sin"
+                    width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </section>
     </main>
