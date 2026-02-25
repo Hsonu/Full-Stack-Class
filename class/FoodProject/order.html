@@ -217,7 +217,8 @@
             border: 2px solid black;
             border-radius: 10px;
         }
-        #section1{
+
+        #section1 {
             display: flex;
             justify-content: center;
             margin-top: 2vw;
@@ -254,25 +255,26 @@
     </div>
     <main>
         <section>
-            <div id="manu">
-                <div id="input-manu">
-                    <p class="p-input">Client Name</p><input type="text" placeholder="Client Name">
-                    <p class="p-input">Food Name</p><input type="text" placeholder="Food Name">
-                    <p class="p-input"> Rate</p><input type="number" placeholder=" Rate">
-                    <p class="p-input"> Quantity</p><input type="number" placeholder="Quantity">
-                    <p class="p-input">Total Amount</p><input placeholder="Total Amount" readonly>
-                    <button id="saveButton" type="button">Save</button>
+            <form action="https://sheetdb.io/api/v1/5pd8elcmlf7p5" method="post" target="hiddenFrame">
+                <div id="manu">
+                    <div id="input-manu">
+                        <p class="p-input">Client Name</p><input type="text" id="Client-name" name="ClientName"
+                            placeholder="Client Name">
+                        <p class="p-input">Food Name</p><input type="text" id="Food-name" name="FoodName"
+                            placeholder="Food Name">
+                        <p class="p-input"> Rate</p><input type="number" id="Rate" oninput="CalculateTotal()" name="Rate"
+                            placeholder=" Rate">
+                        <p class="p-input"> Quantity</p><input type="number" oninput="CalculateTotal()" id="Quantity"
+                            name="Quantity" placeholder="Quantity">
+                        <p class="p-input">Total Amount</p><input name="Total-Amount" id="Total" oninput="CalculateTotal()"
+                            placeholder="Total Amount" readonly>
+                        <p class="p-input">Date & Time</p>
+                        <input type="text" id="DateTime" name="DateTime" readonly>
+                        <button id="saveButton" onclick="btn()" type="submit">Save</button>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="section1">
-            <div id="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7539.422547785175!2d72.8636495516228!3d19.1203182288173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c93a0bbfdf75%3A0x43eab25d6aca117a!2sRaj%20computers%20academy%20-%20Andheri%20east!5e0!3m2!1sen!2sin!4v1772023363186!5m2!1sen!2sin"
-                    width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+            </form>
+            <iframe name="hiddenFrame" style="display:none;"></iframe>
         </section>
     </main>
     <script>
@@ -286,6 +288,45 @@
                 console.log(Order);
             });
         });
+        function btn() {
+            let Client = document.getElementById("Client-name").value;
+            let Food = document.getElementById("Food-name").value;
+            let Rate = document.getElementById("Rate").value;
+            let Quantity = document.getElementById("Quantity").value;
+            if (Client == "" || Food == "" || Rate == "" || Quantity == "") {
+                alert("Fill in the blanck");
+            }
+            else {
+                alert("Data Saved SuccessFully" + Client + Food);
+            }
+            setTimeout(() => {
+                location.reload()
+            }, 1000)
+            return true;
+        }
+        function CalculateTotal() {
+            let Rate = document.getElementById("Rate").value;
+            let Quantity = document.getElementById("Quantity").value;
+            document.getElementById("Total").value = Rate * Quantity
+
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let now = new Date();
+
+            let day = String(now.getDate()).padStart(2, '0');
+            let month = String(now.getMonth() + 1).padStart(2, '0');
+            let year = now.getFullYear();
+
+            let hours = String(now.getHours()).padStart(2, '0');
+            let minutes = String(now.getMinutes()).padStart(2, '0');
+            let seconds = String(now.getSeconds()).padStart(2, '0');
+
+            let fullDateTime = day + "/" + month + "/" + year + " " + hours + ":" + minutes + ":" + seconds;
+
+            document.getElementById("DateTime").value = fullDateTime;
+        });
+
     </script>
 </body>
 
