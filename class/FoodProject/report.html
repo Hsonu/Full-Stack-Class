@@ -233,6 +233,7 @@
             margin-top: 2vw;
 
         }
+
         a {
             color: white;
             text-decoration: none;
@@ -240,6 +241,7 @@
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
 </head>
 
 <body>
@@ -256,7 +258,9 @@
                         </div>
                         <div>
                             <div id="Order">
-                               <a href="order.html"> <p class="Order1">Add Order</p></a>
+                                <a href="order.html">
+                                    <p class="Order1">Add Order</p>
+                                </a>
                                 <p class="Order1">Edit Order Details</p>
                                 <p class="Order1">Report</p>
                             </div>
@@ -372,23 +376,58 @@
             const doc = new jsPDF();
 
             doc.setFontSize(16);
-            doc.text("Food Order Report", 20, 20);
+            doc.text("Food Order Report", 14, 20);
 
-            let y = 30;
+            const tableColumn = [
+                "Client Name",
+                "Food Name",
+                "Rate",
+                "Quantity",
+                "Total Amount",
+                "Date"
+            ];
+
+            const tableRows = [];
+
+            let totalQty = 0;
+            let totalAmount = 0;
 
             data.forEach(r => {
-                doc.setFontSize(11);
-                doc.text(`Client: ${r.ClientName}`, 20, y); y += 6;
-                doc.text(`Food: ${r.FoodName}`, 20, y); y += 6;
-                doc.text(`Rate: ${r.Rate}`, 20, y); y += 6;
-                doc.text(`Qty: ${r.Quantity}`, 20, y); y += 6;
-                doc.text(`Amount: ${r["Total-Amount"]}`, 20, y); y += 10;
+
+                totalQty += Number(r.Quantity) || 0;
+                totalAmount += Number(r["Total-Amount"]) || 0;
+
+                tableRows.push([
+                    r.ClientName,
+                    r.FoodName,
+                    r.Rate,
+                    r.Quantity,
+                    r["Total-Amount"],
+                    r.DateTime
+                ]);
+            });
+
+            // 🔥 Add Grand Total Row
+            tableRows.push([
+                "TOTAL",
+                "",
+                "",
+                totalQty,
+                totalAmount,
+                ""
+            ]);
+
+            doc.autoTable({
+                head: [tableColumn],
+                body: tableRows,
+                startY: 30,
+                theme: "grid",
+                styles: { halign: "center" },
+                headStyles: { fillColor: [22, 160, 133] }
             });
 
             doc.save("Food_Report.pdf");
         }
-
-
 
         async function downloadExcel() {
 
