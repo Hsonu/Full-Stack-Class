@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Food_Report</title>
     <style>
         * {
             margin: 0;
@@ -172,7 +172,7 @@
                 backdrop-filter: blur(2px);
                 gap: 10px;
             }
-        
+
 
             .p-input {
                 display: flex;
@@ -182,7 +182,7 @@
                 color: white;
 
             }
-            
+
 
             #saveButton {
                 padding: 10px;
@@ -238,6 +238,8 @@
             text-decoration: none;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 
 <body>
@@ -254,9 +256,9 @@
                         </div>
                         <div>
                             <div id="Order">
-                                <p class="Order1">Add Order</p>
+                               <a href="order.html"> <p class="Order1">Add Order</p></a>
                                 <p class="Order1">Edit Order Details</p>
-                              <a href="./report.html">  <p class="Order1">Report</p></a>
+                                <p class="Order1">Report</p>
                             </div>
                         </div>
                     </div>
@@ -271,19 +273,18 @@
             <form action="https://sheetdb.io/api/v1/5pd8elcmlf7p5" method="post" target="hiddenFrame">
                 <div id="manu">
                     <div id="input-manu">
+                        <p class="p-input">From Date</p>
+                        <input type="date" id="fromDate">
+                        <p class="p-input">To Date</p>
+                        <input type="date" id="toDate">
                         <p class="p-input">Client Name</p><input type="text" id="Client-name" name="ClientName"
                             placeholder="Client Name">
                         <p class="p-input">Food Name</p><input type="text" id="Food-name" name="FoodName"
                             placeholder="Food Name">
-                        <p class="p-input"> Rate</p><input type="number" id="Rate" oninput="CalculateTotal()" name="Rate"
-                            placeholder=" Rate">
-                        <p class="p-input"> Quantity</p><input type="number" oninput="CalculateTotal()" id="Quantity"
-                            name="Quantity" placeholder="Quantity">
-                        <p class="p-input">Total Amount</p><input name="Total-Amount" id="Total" oninput="CalculateTotal()"
-                            placeholder="Total Amount" readonly>
-                        <p class="p-input">Date & Time</p>
-                        <input type="text" id="DateTime" name="DateTime" readonly>
-                        <button id="saveButton" onclick="btn()" type="submit">Save</button>
+                        <p class="p-input"> Rate</p><input type="number" id="Rate" oninput="CalculateTotal()"
+                            name="Rate" placeholder=" Rate">
+                        <button id="saveButton" onclick="downloadPDF()" type="button">Generat Report</button>
+                        <button id="saveButton" onclick="downloadExcel()" type="button">Generat Report Excel</button>
                     </div>
                 </div>
             </form>
@@ -291,55 +292,134 @@
         </section>
     </main>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        async function getFilteredData() {
 
-            let icon = document.querySelector("#Manu-icon");
-            let Order = document.querySelector("#Order");
+            let client = document.getElementById("Client-name").value.trim();
+            let food = document.getElementById("Food-name").value.trim();
+            let fromDate = document.getElementById("fromDate").value;
+            let toDate = document.getElementById("toDate").value;
 
-            icon.addEventListener("click", () => {
-                Order.classList.toggle("menu1");
-                console.log(Order);
+            if (!client && !food && !fromDate && !toDate) {
+                alert("Enter at least one field");
+                return [];
+            }
+
+            const res = await fetch("https://sheetdb.io/api/v1/5pd8elcmlf7p5");
+            let data = await res.json();
+
+            // Client Filter
+            if (client) {
+                data = data.filter(r =>
+                    r.ClientName &&
+                    r.ClientName.toLowerCase().includes(client.toLowerCase())
+                );
+            }
+
+            // Food Filter
+            if (food) {
+                data = data.filter(r =>
+                    r.FoodName &&
+                    r.FoodName.toLowerCase().includes(food.toLowerCase())
+                );
+            }
+
+            // From Date Filter
+            if (fromDate) {
+                let inputFrom = new Date(fromDate);
+                inputFrom.setHours(0, 0, 0, 0);
+
+                data = data.filter(r => {
+                    if (!r.DateTime) return false;
+
+                    let [datePart] = r.DateTime.split(" ");
+                    let [day, month, year] = datePart.split("/");
+
+                    let rowDate = new Date(year, month - 1, day);
+                    return rowDate >= inputFrom;
+                });
+            }
+
+            // To Date Filter
+            if (toDate) {
+                let inputTo = new Date(toDate);
+                inputTo.setHours(23, 59, 59, 999);
+
+                data = data.filter(r => {
+                    if (!r.DateTime) return false;
+
+                    let [datePart] = r.DateTime.split(" ");
+                    let [day, month, year] = datePart.split("/");
+
+                    let rowDate = new Date(year, month - 1, day);
+                    return rowDate <= inputTo;
+                });
+            }
+
+            return data;
+        }
+
+
+
+        async function downloadPDF() {
+
+            const data = await getFilteredData();
+            if (data.length === 0) {
+                alert("No matching data");
+                return;
+            }
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.setFontSize(16);
+            doc.text("Food Order Report", 20, 20);
+
+            let y = 30;
+
+            data.forEach(r => {
+                doc.setFontSize(11);
+                doc.text(`Client: ${r.ClientName}`, 20, y); y += 6;
+                doc.text(`Food: ${r.FoodName}`, 20, y); y += 6;
+                doc.text(`Rate: ${r.Rate}`, 20, y); y += 6;
+                doc.text(`Qty: ${r.Quantity}`, 20, y); y += 6;
+                doc.text(`Amount: ${r["Total-Amount"]}`, 20, y); y += 10;
             });
-        });
-        function btn() {
-            let Client = document.getElementById("Client-name").value;
-            let Food = document.getElementById("Food-name").value;
-            let Rate = document.getElementById("Rate").value;
-            let Quantity = document.getElementById("Quantity").value;
-            if (Client == "" || Food == "" || Rate == "" || Quantity == "") {
-                alert("Fill in the blanck");
-            }
-            else {
-                alert("Data Saved SuccessFully" + Client + Food);
-            }
-            setTimeout(() => {
-                location.reload()
-            }, 1000)
-            return true;
+
+            doc.save("Food_Report.pdf");
         }
-        function CalculateTotal() {
-            let Rate = document.getElementById("Rate").value;
-            let Quantity = document.getElementById("Quantity").value;
-            document.getElementById("Total").value = Rate * Quantity
 
+
+
+        async function downloadExcel() {
+
+            const data = await getFilteredData();
+            if (data.length === 0) {
+                alert("No matching data");
+                return;
+            }
+
+            let totalQty = 0;
+            let totalAmount = 0;
+
+            data.forEach(r => {
+                totalQty += Number(r.Quantity) || 0;
+                totalAmount += Number(r["Total-Amount"]) || 0;
+            });
+
+            data.push({
+                ClientName: "TOTAL",
+                FoodName: "",
+                Rate: "",
+                Quantity: totalQty,
+                "Total-Amount": totalAmount,
+                DateTime: ""
+            });
+
+            const ws = XLSX.utils.json_to_sheet(data);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Report");
+            XLSX.writeFile(wb, "Food_Report.xlsx");
         }
-        document.addEventListener("DOMContentLoaded", function () {
-
-            let now = new Date();
-
-            let day = String(now.getDate()).padStart(2, '0');
-            let month = String(now.getMonth() + 1).padStart(2, '0');
-            let year = now.getFullYear();
-
-            let hours = String(now.getHours()).padStart(2, '0');
-            let minutes = String(now.getMinutes()).padStart(2, '0');
-            let seconds = String(now.getSeconds()).padStart(2, '0');
-
-            let fullDateTime = day + "/" + month + "/" + year + " " + hours + ":" + minutes + ":" + seconds;
-
-            document.getElementById("DateTime").value = fullDateTime;
-        });
-
     </script>
 </body>
 
