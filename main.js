@@ -1,32 +1,30 @@
-console.log("Welcome to Javascript");
-
-//Variable Declaration
-let x = 10;
-var y = 20;
-const z = 40;
 
 
+subtract(2, 0);
+function add(a, b) {
+    return a+b;
+}
 
-console.log(x+y+z); 
-console.log(x-y-z);
-console.log(x*y*z);
-console.log(x*y*z);
-console.log(x/y/z);
+function subtract(a, b) {
+    console.log(a - b);
+}
+m(45, 54);
+
+function m(a, b) {
+    console.log(a * b);
+}
+
+div(22, 7);
+function div(a, b) {
+    console.log(a / b);
+
+}
+let c = Number(prompt(" Enter Value Of c"));
+let d = Number(prompt("Enter Value Of d"));
+
+console.log(add(c, d));
 
 
-
-y = ++y;
-
-console.log(y);
-
-let a = 1;
-let b = --a; 
-
-console.log(b); 
-
-let g = 1;
-let h = g++; 
-
-
-console.log(h);
-console.log(g);
+let outPutValue = add(c, d);
+const OutPut = document.getElementById("OutPut");
+OutPut.innerHTML = outPutValue;
