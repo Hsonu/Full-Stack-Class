@@ -53,34 +53,73 @@
 
 //second Result
 
-function Addition(a, b) {
-    return a + b;
-}
+// function Addition(a, b) {
+//     return a + b;
+// }
 
-function subtraction(a, b) {
-    return a - b;
-}
-function Multiplication(a, b) {
-    return a * b;
-}
-function Divsion(a, b) {
-    return a / b;
-}
-let c = Number(prompt("Enter Yout First Number")); //input First value
-const e = prompt("Enter Operator(+ , - , * , /)"); // Operator 
-let d = Number(prompt("Enter Yout First Number")); //input second value
-let result;
+// function Subtraction(a, b) {
+//     return a - b;
+// }
 
-if (e === "+") {
-    result = Addition(c, d);
-}
-else if (e === "-") {
-    result = subtraction(c, d);
-}
-else if (e === "*") {
-    result = Multiplication(c, d);
-}
-else if (e === "-") {
-    result = Divsion(c, d);
-}
-const TotalNumberValue = document.getElementById("OutPut").innerHTML = result;
+// function Multiplication(a, b) {
+//     return a * b;
+// }
+
+// function Division(a, b) {
+//     return a / b;
+// }
+
+// let c = Number(prompt("Enter Your First Number"));
+// let e = prompt("Enter Operator (+ , - , * , /)");
+// let d = Number(prompt("Enter Your Second Number"));
+
+// // Operator map
+// const operations = {
+//     "+": Addition,
+//     "-": Subtraction,
+//     "*": Multiplication,
+//     "/": Division
+// };
+
+// let result = operations[e] ? operations[e](c, d) : "Invalid Operator";
+
+// console.log("Result:", result);
+
+// let name = prompt("Inter your name");let OutPut = document.getElementById("OutPut").innerHTML = "hello " + name;
+
+
+
+// 1. Create a new <p> element
+const newPara = document.createElement("div");
+
+newPara.style.color = "Red";
+newPara.style.border = " 5px solid black"
+newPara.style.height = "100px"
+newPara.style.width = "100px"
+newPara.style.marginTop = "10px"
+
+
+const newPara1 = document.createElement("div");
+newPara1.style.color = "Red";
+newPara1.style.border = "5px solid black"
+newPara1.style.borderRadius = "50%"
+newPara1.style.height = "100px"
+newPara1.style.width = "100px"
+newPara1.style.marginTop = "10px"
+
+const newPara2 = document.createElement("div");
+
+newPara2.style.color = "Red";
+newPara2.style.border = " 5px solid black"
+newPara2.style.height = "100px"
+newPara2.style.width = "200px"
+newPara2.style.marginTop = "10px"
+
+// 2. Add some text to it
+// newPara.textContent = "This paragraph was created with JavaScript!";
+
+// 3. Append it to the body of the document
+document.body.appendChild(newPara);
+document.body.appendChild(newPara1);
+document.body.appendChild(newPara2);
+
