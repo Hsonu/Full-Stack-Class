@@ -25,7 +25,6 @@
             width: 20vw;
             border: 1px solid black;
             border-radius: 10px;
-            box-shadow: 10px 10px;
             box-shadow: 0px 0px 4px 0px white;
         }
 
@@ -66,31 +65,31 @@
 
         .control-img-f,
         .control-img {
-            width: 2vw;
-            height: 2vw;
+            width: 1.4vw;
+            height: 1.4vw;
             display: flex;
             justify-content: center;
             cursor: pointer;
             background-color: aliceblue;
             border-radius: 9px;
             padding: 0.5vw;
-            box-shadow: 10px 10px;
         }
 
         .control-img:hover {
             background-color: #00c243;
-            box-shadow: 0px 0px 7px 0px white
+            box-shadow: 0px 0px 7px 0px white;
         }
 
         .control-img-f:hover {
             background-color: #00c243;
-            box-shadow: 0px 0px 7px 0px white
+            box-shadow: 0px 0px 7px 0px white;
         }
 
 
         .control-img-f {
-            width: 2.8vw;
-            height: 2.8vw;
+            width: 1.5vw;
+            height: 1.5vw;
+            padding: 1vw;
         }
 
         .f-img-div {
@@ -100,11 +99,14 @@
         }
 
         .player {
+            --webkit-appearance: none;
             display: flex;
             margin-top: 2vw;
-            height: 10px;
+            height: 3px;
             width: 20vw;
             color: black;
+            cursor: pointer;
+            background: #ffffff2c;
         }
 
         #song-p {
@@ -115,6 +117,108 @@
             display: flex;
             justify-content: center;
             font-size: 1.5vw;
+        }
+
+        @media(max-width: 500px) {
+            #main {
+                display: flex;
+                justify-content: center;
+                height: auto;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #main1 {
+                border: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                width: 72vw;
+                align-items: center;
+                justify-content: center;
+                padding: 2vw;
+                background-color: black;
+                border-radius: 10px;
+                padding-top: 0.5vw;
+            }
+
+            #sonu-p-div {
+                display: flex;
+                justify-content: center;
+                font-size: 6.5vw;
+            }
+
+            #f-img {
+                display: flex;
+                height: auto;
+                width: 74vw;
+                border: 1px solid black;
+                border-radius: 10px;
+                box-shadow: 0px 0px 4px 0px white;
+            }
+
+            #f-img:hover {
+                box-shadow: 0px 0px 4px 1px white;
+                cursor: pointer;
+            }
+
+            .player {
+                --webkit-appearance: none;
+                display: flex;
+                margin-top: 2vw;
+                height: 4px;
+                width: 57vw;
+                color: black;
+                cursor: pointer;
+                background: #ffffff2c;
+                
+            }
+
+            #control {
+                display: flex;
+                gap: 14vw;
+                margin-top: 3vh;
+            }
+
+            .f-img-div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .control-img-f,
+            .control-img {
+                width: 5.4vw;
+                height: 5.4vw;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                background-color: aliceblue;
+                border-radius: 9px;
+                padding: 2.5vw;
+            }
+
+            .control-img:hover {
+                background-color: #00c243;
+                box-shadow: 0px 0px 7px 0px white;
+            }
+
+            .control-img-f {
+                width: 5.5vw;
+                height: 5.5vw;
+                padding: 4vw;
+            }
+            
+        .player {
+            --webkit-appearance: none;
+            display: flex;
+            margin-top: 2vw;
+            height: 2px;
+            width: 62vw;
+            color: black;
+            cursor: pointer;
+            background: #ffffff2c;
+        }
+
         }
     </style>
 </head>
@@ -140,8 +244,8 @@
             <div id="control">
                 <div class="f-img-div">
                     <img class="control-img" src="./image1.png">
-                </div class="f-img-div">
-                <div>
+                </div>
+                <div class="f-img-div">
                     <img class="control-img-f" id="playBtn" src="./image2.png">
                 </div>
                 <div class="f-img-div">
@@ -151,4 +255,5 @@
         </div>
     </div>
 </body>
+
 </html>
