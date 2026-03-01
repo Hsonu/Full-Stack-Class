@@ -90,36 +90,47 @@
 
 
 // 1. Create a new <p> element
-const newPara = document.createElement("div");
+// const newPara = document.createElement("div");
 
-newPara.style.color = "Red";
-newPara.style.border = " 5px solid black"
-newPara.style.height = "100px"
-newPara.style.width = "100px"
-newPara.style.marginTop = "10px"
+// newPara.style.color = "Red";
+// newPara.style.border = " 5px solid black"
+// newPara.style.height = "100px"
+// newPara.style.width = "100px"
+// newPara.style.marginTop = "10px"
 
 
-const newPara1 = document.createElement("div");
-newPara1.style.color = "Red";
-newPara1.style.border = "5px solid black"
-newPara1.style.borderRadius = "50%"
-newPara1.style.height = "100px"
-newPara1.style.width = "100px"
-newPara1.style.marginTop = "10px"
+// const newPara1 = document.createElement("div");
+// newPara1.style.color = "Red";
+// newPara1.style.border = "5px solid black"
+// newPara1.style.borderRadius = "50%"
+// newPara1.style.height = "100px"
+// newPara1.style.width = "100px"
+// newPara1.style.marginTop = "10px"
 
-const newPara2 = document.createElement("div");
+// const newPara2 = document.createElement("div");
 
-newPara2.style.color = "Red";
-newPara2.style.border = " 5px solid black"
-newPara2.style.height = "100px"
-newPara2.style.width = "200px"
-newPara2.style.marginTop = "10px"
+// newPara2.style.color = "Red";
+// newPara2.style.border = " 5px solid black"
+// newPara2.style.height = "100px"
+// newPara2.style.width = "200px"
+// newPara2.style.marginTop = "10px"
 
-// 2. Add some text to it
-// newPara.textContent = "This paragraph was created with JavaScript!";
+// // 2. Add some text to it
+// // newPara.textContent = "This paragraph was created with JavaScript!";
 
-// 3. Append it to the body of the document
-document.body.appendChild(newPara);
-document.body.appendChild(newPara1);
-document.body.appendChild(newPara2);
+// // 3. Append it to the body of the document
+// document.body.appendChild(newPara);
+// document.body.appendChild(newPara1);
+// document.body.appendChild(newPara2);
+
+let Round = document.createElement("div");
+let OutPut = document.getElementById("OutPut");
+
+Round.style.border = "5px solid black";
+Round.style.height = "100px";
+Round.style.width = "100px";
+Round.style.borderColor = "Red";
+Round.style.borderBottomColor = "green"
+Round.style.borderTopColor = "Blue"
+document.body.appendChild(Round);
 
