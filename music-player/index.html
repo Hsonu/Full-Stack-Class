@@ -24,9 +24,19 @@
             height: auto;
             width: 20vw;
             border: 1px solid black;
-            border-radius: 10px;
+            border-radius: 50%;
             box-shadow: 0px 0px 4px 0px white;
         }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(-360deg);
+            }
+        }
+
+       
+
+
 
         #f-img:hover {
             box-shadow: 0px 0px 4px 1px white;
@@ -170,7 +180,7 @@
                 color: black;
                 cursor: pointer;
                 background: #ffffff2c;
-                
+
             }
 
             #control {
@@ -207,18 +217,17 @@
                 height: 5.5vw;
                 padding: 4vw;
             }
-            
-        .player {
-            --webkit-appearance: none;
-            display: flex;
-            margin-top: 2vw;
-            height: 2px;
-            width: 62vw;
-            color: black;
-            cursor: pointer;
-            background: #ffffff2c;
-        }
 
+            .player {
+                --webkit-appearance: none;
+                display: flex;
+                margin-top: 2vw;
+                height: 2px;
+                width: 62vw;
+                color: black;
+                cursor: pointer;
+                background: #ffffff2c;
+            }
         }
     </style>
 </head>
@@ -246,7 +255,8 @@
                     <img class="control-img" src="./image1.png">
                 </div>
                 <div class="f-img-div">
-                    <img class="control-img-f" id="playBtn" src="./image2.png">
+                    <img class="control-img-f" id="playBtn" onclick="rotateCircle()" ondblclick="stopCircle()"
+                        src="./image2.png">
                 </div>
                 <div class="f-img-div">
                     <img class="control-img" src="./image3.png">
@@ -254,6 +264,18 @@
             </div>
         </div>
     </div>
+    <script>
+        let RoundImg = document.getElementById("f-img");
+        // let playBtn = document.getElementById("playBtn");
+        function rotateCircle() {
+            RoundImg.style.animation = "spin 3s linear infinite"
+        }
+
+        function stopCircle() {
+            RoundImg.style.animationPlayState = "paused"
+        }
+
+    </script>
 </body>
 
 </html>
