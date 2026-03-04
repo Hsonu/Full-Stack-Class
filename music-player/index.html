@@ -172,11 +172,13 @@
                 border: 1px solid black;
                 display: flex;
                 flex-direction: column;
-                width: 72vw;
+                width: 60vw;
                 align-items: center;
-                justify-content: center;
+                /* justify-content: center; */
                 padding: 2vw;
-                background-color: black;
+                /* background-color: black; */
+                /* background-color: #29739aa3; */
+                background: linear-gradient(to bottom, #2BB3F3, #0033A0);
                 border-radius: 10px;
                 padding-top: 0.5vw;
             }
@@ -201,7 +203,7 @@
                 cursor: pointer;
             }
 
-            .player {
+            /* .player {
                 --webkit-appearance: none;
                 display: flex;
                 margin-top: 2vw;
@@ -211,7 +213,7 @@
                 cursor: pointer;
                 background: #ffffff2c;
 
-            }
+            } */
 
             #control {
                 display: flex;
@@ -227,14 +229,15 @@
 
             .control-img-f,
             .control-img {
-                width: 5.4vw;
+                width: auto;
                 height: 5.4vw;
                 display: flex;
                 justify-content: center;
                 cursor: pointer;
                 background-color: aliceblue;
                 border-radius: 9px;
-                padding: 2.5vw;
+                padding: 1.5vw;
+
             }
 
             .control-img:hover {
@@ -243,9 +246,9 @@
             }
 
             .control-img-f {
-                width: 5.5vw;
-                height: 5.5vw;
-                padding: 4vw;
+                width: auto;
+                height: 6.5vw;
+                padding: 3vw;
             }
 
             .player {
@@ -253,11 +256,38 @@
                 display: flex;
                 margin-top: 2vw;
                 height: 2px;
-                width: 62vw;
+                width: 40vw;
                 color: black;
                 cursor: pointer;
                 background: #ffffff2c;
             }
+
+            #f-img {
+                display: flex;
+                height: auto;
+                width: 50vw;
+                border: 1px solid black;
+                border-radius: 50%;
+                box-shadow: 0px 0px 4px 0px white;
+            }
+
+            #song-p {
+                color: aliceblue;
+                /* font-size: 2vw; */
+                font-size: 4vw;
+                margin-top: 3vh;
+
+            }
+
+            #center-img {
+                position: absolute;
+                margin-top: 17.5vw;
+                height: auto;
+                width: 26vw;
+                z-index: 999;
+                margin-left: 30vw;
+            }
+
         }
     </style>
 </head>
@@ -266,14 +296,15 @@
     <div id="main">
         <div id="main1">
             <div>
-                <div id="sonu-p-div">
-                    <p id="song-p">Salaar Cease Fire - Hindi (Original Motion Picture Soundtrack)</p>
-                </div>
+
                 <div id="center-img-div">
                     <img id="center-img" src="./dvd img.png">
                 </div>
                 <img id="f-img"
                     src="https://c.saavncdn.com/679/Salaar-Cease-Fire-Hindi-Hindi-2024-20260205193338-500x500.jpg">
+            </div>
+            <div id="sonu-p-div">
+                <p id="song-p">Salaar Cease Fire - Hindi (Original Motion Picture Soundtrack)</p>
             </div>
             <div>
                 <div>
@@ -284,7 +315,7 @@
                 <div class="f-img-div">
                     <img class="control-img" src="./image1.png">
                     <audio id="song">
-                       <source src="./Sooraj Hi Chhaon Banke Salaar 128 Kbps.mp3" type="audio/mpeg">
+                        <source src="./Sooraj Hi Chhaon Banke Salaar 128 Kbps.mp3" type="audio/mpeg">
                     </audio>
                 </div>
                 <div class="f-img-div">
@@ -304,7 +335,27 @@
         let center_img = document.getElementById("center-img");
         let RoundImg = document.getElementById("f-img");
         let playBtn = document.getElementById("playBtn");
+
         let playBtn1 = document.getElementById("playBtn1");
+
+        let progress = document.getElementById("progress");
+
+        //chatGpt
+        // Wait until metadata (like duration) is loaded
+        audio.addEventListener("loadedmetadata", function () {
+            progress.max = audio.duration;
+        });
+
+        // Update slider as song plays
+        audio.addEventListener("timeupdate", function () {
+            progress.value = audio.currentTime;
+        });
+
+        // Allow user to seek
+        //chatGpt
+        progress.addEventListener("input", function () {
+            audio.currentTime = progress.value;
+        });
         function rotateCircle() {
             audio.play();
             playBtn.style.display = "none"
@@ -317,10 +368,8 @@
             RoundImg.style.animationPlayState = "paused"
             center_img.style.animationPlayState = "paused"
             playBtn.style.display = "block"
-            playBtn1.style.display="none"
-
+            playBtn1.style.display = "none"
         }
     </script>
 </body>
-
 </html>
