@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" href="./dvd img.png">
     <title>Document</title>
     <style>
         * {
@@ -39,10 +40,6 @@
                 transform: rotate(360deg);
             }
         }
-
-
-
-
         #f-img:hover {
             box-shadow: 0px 0px 4px 1px white;
             cursor: pointer;
@@ -319,9 +316,7 @@
                     </audio>
                 </div>
                 <div class="f-img-div">
-                    <img class="control-img-f" id="playBtn" onclick="rotateCircle()" ondblclick="stopCircle()"
-                        src="./image2.png">
-                    <img class="control-img-f" id="playBtn1" onclick="stopCircle()" src="./image4.png">
+                    <img class="control-img-f" id="playBtn" src="./image2.png">
                 </div>
 
                 <div class="f-img-div">
@@ -340,36 +335,60 @@
 
         let progress = document.getElementById("progress");
 
-        //chatGpt
-        // Wait until metadata (like duration) is loaded
-        audio.addEventListener("loadedmetadata", function () {
-            progress.max = audio.duration;
-        });
+        let isPlaying = false;
 
-        // Update slider as song plays
-        audio.addEventListener("timeupdate", function () {
-            progress.value = audio.currentTime;
-        });
+        playBtn.addEventListener("click", () => {
+            isPlaying = !isPlaying;
 
-        // Allow user to seek
-        //chatGpt
-        progress.addEventListener("input", function () {
-            audio.currentTime = progress.value;
-        });
-        function rotateCircle() {
-            audio.play();
-            playBtn.style.display = "none"
-            playBtn1.style.display = "block"
-            RoundImg.style.animation = "spin 3s linear infinite"
-            center_img.style.animation = "spin1 3s linear infinite"
-        }
-        function stopCircle() {
-            audio.pause();
-            RoundImg.style.animationPlayState = "paused"
-            center_img.style.animationPlayState = "paused"
-            playBtn.style.display = "block"
-            playBtn1.style.display = "none"
-        }
+            if (isPlaying) {
+                console.log("play");
+                audio.play();
+       
+                playBtn.src = "./image4.png"
+                RoundImg.style.animation = "spin 3s linear infinite"
+                center_img.style.animation = "spin1 3s linear infinite"
+            }
+            else {
+                console.log("Pused");
+                audio.pause();
+                playBtn.src = "./image2.png"
+                RoundImg.style.animationPlayState = "paused"
+                center_img.style.animationPlayState = "paused"
+                playBtn.style.display = "block"
+               
+            }
+        })
+
+        // //chatGpt
+        // // Wait until metadata (like duration) is loaded
+        // audio.addEventListener("loadedmetadata", function () {
+        //     progress.max = audio.duration;
+        // });
+
+        // // Update slider as song plays
+        // audio.addEventListener("timeupdate", function () {
+        //     progress.value = audio.currentTime;
+        // });
+
+        // // Allow user to seek
+        // //chatGpt
+        // progress.addEventListener("input", function () {
+        //     audio.currentTime = progress.value;
+        // });
+        // function rotateCircle() {
+        //     audio.play();
+        //     playBtn.style.display = "none"
+        //     playBtn1.style.display = "block"
+        //     RoundImg.style.animation = "spin 3s linear infinite"
+        //     center_img.style.animation = "spin1 3s linear infinite"
+        // }
+        // function stopCircle() {
+        //     audio.pause();
+        //     RoundImg.style.animationPlayState = "paused"
+        //     center_img.style.animationPlayState = "paused"
+        //     playBtn.style.display = "block"
+        //     playBtn1.style.display = "none"
+        // }
     </script>
 </body>
 </html>

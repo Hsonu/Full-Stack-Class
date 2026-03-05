@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <button id="player">Play</button>
+
+    <script>
+
+        let playButton = document.getElementById("player");
+        let isPlaying = false;
+
+        playButton.addEventListener("click", () => {
+            // Toggle the state
+            isPlaying = !isPlaying;
+
+            if (isPlaying) {
+                console.log("The Song is Playing");
+            } else {
+                console.log("The Song is Paused");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
