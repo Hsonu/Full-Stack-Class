@@ -73,7 +73,7 @@
         td {
             border: 1px solid black;
             margin: 0px;
-            padding: 8px;
+            padding: 0.5vw;
             text-align: center;
 
         }
@@ -92,6 +92,7 @@
         #SubjectWise {
             display: flex;
             justify-content: center;
+            margin-top: 3vh;
         }
 
         #ResultSummary,
@@ -112,9 +113,31 @@
 
         #Marksheet-Div {
             border: 1px solid black;
-            width: 70%;
+            width: 60%;
             display: flex;
             justify-content: center;
+        }
+
+        .h-c {
+            width: 11vw;
+            padding: 0.4vw;
+        }
+
+        .l-t {
+            width: 11vw;
+            padding: 0.4vw;
+        }
+
+        #StudentMarksheet {
+            color: rgb(205, 50, 50);
+        }
+
+        th {
+            background-color: rgb(51, 73, 107);
+            color: white;
+        }
+        input{
+        text-transform: uppercase;
         }
     </style>
 </head>
@@ -137,47 +160,48 @@
             <div id="input-main">
                 <div id="Course-box">
                     <h3>Course:-</h3>
-                    <input class="College-name" type="text" placeholder="Course">
+                    <input class="College-name" id="StudentCourse" type="text" placeholder="Course">
                 </div>
                 <div id="Course-box">
                     <h3>Semester:-</h3>
-                    <input class="College-name" type="text" placeholder="Semester">
+                    <input class="College-name" id="InputSemester" type="text" placeholder="Semester">
                 </div>
                 <div id="Course-box">
                     <h3>Roll No:-</h3>
-                    <input class="College-name" type="text" placeholder="Roll No">
+                    <input class="College-name" id="inPutRollNumber" type="text" placeholder="Roll No">
                 </div>
                 <div id="Course-box">
                     <h3>Student Name:-</h3>
-                    <input class="College-name" type="text" placeholder="Student Name">
+                    <input class="College-name" id="inPutStudentName" type="text" placeholder="Student Name">
                 </div>
                 <div id="Course-box">
                     <h3>Father's Name:-</h3>
-                    <input class="College-name" type="text" placeholder="Father's Name">
+                    <input class="College-name" id="InPutFaterName" type="text" placeholder="Father's Name">
                 </div>
                 <div id="Course-box">
                     <h3>Date of Birth :-</h3>
-                    <input class="College-name" type="date" placeholder="Student Name">
+                    <input class="College-name" id="inPutDateOfBirth" type="date" placeholder="Student Name">
                 </div>
                 <div id="Course-box">
                     <h3>C++ Programming:-</h3>
-                    <input class="College-name" type="text" placeholder="C++ Programming">
+                    <input class="College-name" type="text" id="inputCPrograming" placeholder="C++ Programming">
                 </div>
                 <div id="Course-box">
                     <h3>Java Programming:-</h3>
-                    <input class="College-name" type="text" placeholder="Java Programming">
+                    <input class="College-name" id="inPutJavaProgrammingMarks" type="text"
+                        placeholder="Java Programming">
                 </div>
                 <div id="Course-box">
                     <h3>HTML:-</h3>
-                    <input class="College-name" type="text" placeholder="HTML">
+                    <input class="College-name" type="text" id="inPutHTMLMarks" placeholder="HTML">
                 </div>
                 <div id="Course-box">
                     <h3>Mathematics:-</h3>
-                    <input class="College-name" type="text" placeholder="Mathematics">
+                    <input class="College-name" type="text"  id="inPutMathematicsMarks" placeholder="Mathematics">
                 </div>
                 <div id="Course-box">
                     <h3>Full Stack Development:-</h3>
-                    <input class="College-name" type="text" placeholder="Full Stack Development">
+                    <input class="College-name" type="text" id="InputFullStackDevMarks" placeholder="Full Stack Development">
                 </div>
             </div>
         </div>
@@ -191,7 +215,7 @@
             <div id="heading-m">
                 <div id="heading">
                     <b>
-                        <h2>STUDENT MARKSHEET</h2>
+                        <h2 id="StudentMarksheet">STUDENT MARKSHEET</h2>
                     </b>
                 </div>
                 <div>
@@ -213,26 +237,26 @@
                     <div id="table-Main">
                         <table>
                             <tr>
-                                <th>Roll NO</th>
-                                <th>Student Name</th>
-                                <th>Father's Name</th>
-                                <th>Date of Birth</th>
+                                <th class="h-c">Roll NO</th>
+                                <th class="h-c">Student Name</th>
+                                <th class="h-c">Father's Name</th>
+                                <th class="h-c">Date of Birth</th>
                             </tr>
                             <tr id="marks-table">
-                                <td class="marks-table">000 </td> <!--Roll No -->
-                                <td class="marks-table">000 </td> <!--Student Name -->
-                                <td class="marks-table">000 </td> <!--Father's Name -->
-                                <td class="marks-table">000 </td> <!--Date of birth -->
+                                <td class="marks-table" id="outputRollNumber">000 </td> <!--Roll No -->
+                                <td class="marks-table" id="outPutStudetName">000 </td> <!--Student Name -->
+                                <td class="marks-table" id="OutPutFatherName">000 </td> <!--Father's Name -->
+                                <td class="marks-table" id="outPutDateOfBirth">000 </td> <!--Date of birth -->
                             </tr>
                         </table>
                     </div>
                     <div>
-                        <b>
-                            <h2 id="SubjectWise">Subject Wise Marks</h2>
-                        </b>
-                    </div>
-                    <table id="table-Main1">
                         <div>
+                            <b>
+                                <h2 id="SubjectWise">Subject Wise Marks</h2>
+                            </b>
+                        </div>
+                        <table id="table-Main1">
                             <tr>
                                 <th>Sr No.</th>
                                 <th>Subject Name</th>
@@ -243,55 +267,55 @@
                             </tr>
                             <tr id="marks-table">
                                 <td class="marks-table">1 </td> <!--Sr1 -->
-                                <td class="marks-table">000 </td> <!--C++ Programming -->
-                                <td class="marks-table">000 </td> <!--Max Marks -->
-                                <td class="marks-table">000 </td> <!--Obtained -->
+                                <td class="marks-table">C++ Programming</td> <!--C++ Programming -->
+                                <td class="marks-table">100 </td> <!--Max Marks -->
+                                <td class="marks-table" id="OutPutMarkS">000 </td> <!--Obtained -->
                                 <td class="marks-table">000 </td> <!--Grade -->
                                 <td class="marks-table">000 </td> <!--Result -->
                             </tr>
                             <tr id="marks-table">
                                 <td class="marks-table">2</td> <!--Sr2 -->
-                                <td class="marks-table">000 </td> <!--Java Programming -->
-                                <td class="marks-table">000 </td> <!--Max Marks -->
-                                <td class="marks-table">000 </td> <!--Obtained -->
+                                <td class="marks-table">Java Programming </td> <!--Java Programming -->
+                                <td class="marks-table">100 </td> <!--Max Marks -->
+                                <td class="marks-table" id="OutPutJavaProgrammingMarks">000 </td> <!--Obtained -->
                                 <td class="marks-table">000 </td> <!--Grade -->
                                 <td class="marks-table">000 </td> <!--Result -->
                             </tr>
                             <tr id="marks-table">
                                 <td class="marks-table">3</td> <!--Sr3 -->
-                                <td class="marks-table">000 </td> <!--HTML -->
-                                <td class="marks-table">000 </td> <!--Max Marks -->
-                                <td class="marks-table">000 </td> <!--Obtained -->
+                                <td class="marks-table">HTML </td> <!--HTML -->
+                                <td class="marks-table">100 </td> <!--Max Marks -->
+                                <td class="marks-table" id="outPutHTMLMarks">000 </td> <!--Obtained -->
                                 <td class="marks-table">000 </td> <!--Grade -->
                                 <td class="marks-table">000 </td> <!--Result -->
                             </tr>
                             <tr id="marks-table">
                                 <td class="marks-table">4</td> <!--Sr4 -->
-                                <td class="marks-table">000 </td> <!--Mathematics -->
-                                <td class="marks-table">000 </td> <!--Max Marks -->
-                                <td class="marks-table">000 </td> <!--Obtained -->
+                                <td class="marks-table">Mathematics </td> <!--Mathematics -->
+                                <td class="marks-table">100 </td> <!--Max Marks -->
+                                <td class="marks-table" id="outPutMathematicsmarks">000 </td> <!--Obtained -->
                                 <td class="marks-table">000 </td> <!--Grade -->
                                 <td class="marks-table">000 </td> <!--Result -->
                             </tr>
                             <tr id="marks-table">
                                 <td class="marks-table">5</td> <!--Sr5 -->
-                                <td class="marks-table">000 </td> <!--Full Stack Development -->
-                                <td class="marks-table">000 </td> <!--Max Marks -->
-                                <td class="marks-table">000 </td> <!--Obtained -->
+                                <td class="marks-table">Full Stack Development</td> <!--Full Stack Development -->
+                                <td class="marks-table">100 </td> <!--Max Marks -->
+                                <td class="marks-table" id="outPutFullStackDevMarks">000 </td> <!--Obtained -->
                                 <td class="marks-table">000 </td> <!--Grade -->
                                 <td class="marks-table">000 </td> <!--Result -->
                             </tr>
-                        </div>
+                    </div>
                     </table>
                     <div>
                         <h2 id="ResultSummary">Result Summary</h2>
                     </div>
                     <table id="ResultSummary">
                         <tr>
-                            <th>Total Marks</th>
-                            <th>Maximum Marks</th>
-                            <th>Percentage</th>
-                            <th>Result</th>
+                            <th class="l-t">Total Marks</th>
+                            <th class="l-t">Maximum Marks</th>
+                            <th class="l-t">Percentage</th>
+                            <th class="l-t">Result</th>
                         </tr>
                         <tr id="marks-table">
                             <td class="marks-table">000 </td> <!--Roll No -->
@@ -306,13 +330,51 @@
     </section>
 
     <script>
-        let hideSheet = document.getElementById("hideSheet");
-        let hideSheet1 = document.getElementById("hideSheet1");
-        let hideSheet2 = document.getElementById("hideSheet2");
-        let button1 = document.getElementById("button1");
+        let Course = document.getElementById("StudentCourse"); //input Course
+        let OutPutCourse = document.getElementById("marks-course") // outPut Course
+        let button1 = document.getElementById("button1"); // Generate MarkShhet button
+        let OutPutSemester = document.getElementById("marks-semester"); //output Semester
+        let InputSemester = document.getElementById("InputSemester"); // input Semester
+        let inPutRollNumber = document.getElementById("inPutRollNumber") //InPut Roll Number
+        let outputRollNumber = document.getElementById("outputRollNumber"); //outPut Roll Number
+        let inPutStudentName = document.getElementById("inPutStudentName"); // InPut Student Name
+        let outPutStudetName = document.getElementById("outPutStudetName"); // OutPut Student Name
+        let InPutFaterName = document.getElementById("InPutFaterName"); // Input Father Name
+        let OutPutFatherName = document.getElementById("OutPutFatherName"); // OutPut Father Name
+        let inDateOfBirth = document.getElementById("inPutDateOfBirth"); // input Date Of Birth
+        let outPutDateOfBirth = document.getElementById("outPutDateOfBirth"); //OutPut Date OF Birth
+        let OutPutCProgramaingMarkS = document.getElementById("OutPutMarkS"); //OutPut C++ Programing Marks    
+        let inputCPrograming = document.getElementById("inputCPrograming") //input C++ Programing Marks
+        let inPutJavaProgrammingMarks = document.getElementById("inPutJavaProgrammingMarks"); //input inPutJavaProgrammingMarks;
+        let OutPutJavaProgrammingMarks = document.getElementById("OutPutJavaProgrammingMarks"); // OutPutJavaProgrammingMarks
+        let inPutHTMLMarks = document.getElementById("inPutHTMLMarks"); //inPutHTMLMarks
+        let outPutHTMLMarks = document.getElementById("outPutHTMLMarks") //outPutHTMLMarks
+        let inPutMathematicsMarks = document.getElementById("inPutMathematicsMarks"); //inPutMathematicsMarks
+        let outPutMathematicsmarks = document.getElementById("outPutMathematicsmarks"); //outPutMathematicsmarks
+        let InputFullStackDevMarks = document.getElementById("InputFullStackDevMarks"); //InputFullStackDevMarks
+        let outPutFullStackDevMarks = document.getElementById("outPutFullStackDevMarks");//outPutFullStackDevMarks
+
+
         button1.addEventListener("click", () => {
-            hideSheet.style.display = "block"
+            OutPutCourse.innerText = Course.value;
+            OutPutSemester.innerText = InputSemester.value;
+            outputRollNumber.innerText = inPutRollNumber.value;
+            outPutStudetName.innerText = inPutStudentName.value;
+            OutPutFatherName.innerText = InPutFaterName.value;
+            outPutDateOfBirth.innerText = inDateOfBirth.value;
+            OutPutCProgramaingMarkS.innerText = inputCPrograming.value;
+            OutPutJavaProgrammingMarks.innerText = inPutJavaProgrammingMarks.value;
+            outPutHTMLMarks.innerText = inPutHTMLMarks.value;
+            outPutMathematicsmarks.innerText = inPutMathematicsMarks.value;
+            outPutFullStackDevMarks.innerText = InputFullStackDevMarks.value;
+
         })
+
+
+
+
+
     </script>
 </body>
+
 </html>
