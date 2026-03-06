@@ -15,7 +15,7 @@
             display: flex;
             justify-content: center;
             font-size: 2vw;
-            border-bottom: 4px double black;
+            border-bottom: 0.5vw double black;
             padding-bottom: 1px;
         }
 
@@ -66,7 +66,7 @@
 
         #main-h {
             display: flex;
-            gap: 40vw;
+            gap: 20vw;
         }
 
         th,
@@ -75,6 +75,7 @@
             margin: 0px;
             padding: 8px;
             text-align: center;
+
         }
 
         th {
@@ -98,8 +99,22 @@
             display: flex;
             justify-content: center;
         }
-        #hideSheet,#hideSheet1 ,#hideSheet2{
-            display: none;
+
+        #hideSheet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        #Marksheet-Div {
+            border: 1px solid black;
+            width: 70%;
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
@@ -170,129 +185,134 @@
             <button id="button1" type="button">Generate Marksheet</button>
         </div>
     </section>
-        <section id="hideSheet">
-            <div>
-                <h3>College / School Name :- Raj Computer Center</h3>
-            </div>
-            <div id="main-h">
-                <div id="Course-box">
-                    <h3>Course:-</h3>
-                    <h3 id="marks-course"></h3>
+
+    <section id="hideSheet">
+        <div id="Marksheet-Div">
+            <div id="heading-m">
+                <div id="heading">
+                    <b>
+                        <h2>STUDENT MARKSHEET</h2>
+                    </b>
                 </div>
                 <div>
+                    <h3>College / School Name :- Raj Computer Center</h3>
+                </div>
+                <div id="main-h">
                     <div id="Course-box">
-                        <h3>Semester:-</h3>
-                        <h3 id="marks-semester"></h3>
+                        <h3>Course:-</h3>
+                        <h3 id="marks-course"></h3>
+                    </div>
+                    <div>
+                        <div id="Course-box">
+                            <h3>Semester:-</h3>
+                            <h3 id="marks-semester"></h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="table-Main">
-                <table>
-                    <tr>
-                        <th>Roll NO</th>
-                        <th>Student Name</th>
-                        <th>Father's Name</th>
-                        <th>Date of Birth</th>
-                    </tr>
-                    <tr id="marks-table">
-                        <td class="marks-table">000 </td> <!--Roll No -->
-                        <td class="marks-table">000 </td> <!--Student Name -->
-                        <td class="marks-table">000 </td> <!--Father's Name -->
-                        <td class="marks-table">000 </td> <!--Date of birth -->
-                    </tr>
-                </table>
-            </div>
-        </section>
-        <section id="hideSheet1">
-            <div>
-                <b>
-                    <h2 id="SubjectWise">Subject Wise Marks</h2>
-                </b>
-            </div>
-            <table id="table-Main1">
-                <div>
-                    <tr>
-                        <th>Sr No.</th>
-                        <th>Subject Name</th>
-                        <th>Max Marks</th>
-                        <th>Obtained Marks</th>
-                        <th>Grade</th>
-                        <th>Result</th>
-                    </tr>
-                    <tr id="marks-table">
-                        <td class="marks-table">1 </td> <!--Sr1 -->
-                        <td class="marks-table">000 </td> <!--C++ Programming -->
-                        <td class="marks-table">000 </td> <!--Max Marks -->
-                        <td class="marks-table">000 </td> <!--Obtained -->
-                        <td class="marks-table">000 </td> <!--Grade -->
-                        <td class="marks-table">000 </td> <!--Result -->
-                    </tr>
-                    <tr id="marks-table">
-                        <td class="marks-table">2</td> <!--Sr2 -->
-                        <td class="marks-table">000 </td> <!--Java Programming -->
-                        <td class="marks-table">000 </td> <!--Max Marks -->
-                        <td class="marks-table">000 </td> <!--Obtained -->
-                        <td class="marks-table">000 </td> <!--Grade -->
-                        <td class="marks-table">000 </td> <!--Result -->
-                    </tr>
-                    <tr id="marks-table">
-                        <td class="marks-table">3</td> <!--Sr3 -->
-                        <td class="marks-table">000 </td> <!--HTML -->
-                        <td class="marks-table">000 </td> <!--Max Marks -->
-                        <td class="marks-table">000 </td> <!--Obtained -->
-                        <td class="marks-table">000 </td> <!--Grade -->
-                        <td class="marks-table">000 </td> <!--Result -->
-                    </tr>
-                    <tr id="marks-table">
-                        <td class="marks-table">4</td> <!--Sr4 -->
-                        <td class="marks-table">000 </td> <!--Mathematics -->
-                        <td class="marks-table">000 </td> <!--Max Marks -->
-                        <td class="marks-table">000 </td> <!--Obtained -->
-                        <td class="marks-table">000 </td> <!--Grade -->
-                        <td class="marks-table">000 </td> <!--Result -->
-                    </tr>
-                    <tr id="marks-table">
-                        <td class="marks-table">5</td> <!--Sr5 -->
-                        <td class="marks-table">000 </td> <!--Full Stack Development -->
-                        <td class="marks-table">000 </td> <!--Max Marks -->
-                        <td class="marks-table">000 </td> <!--Obtained -->
-                        <td class="marks-table">000 </td> <!--Grade -->
-                        <td class="marks-table">000 </td> <!--Result -->
-                    </tr>
+                <div id="main-table-div">
+                    <div id="table-Main">
+                        <table>
+                            <tr>
+                                <th>Roll NO</th>
+                                <th>Student Name</th>
+                                <th>Father's Name</th>
+                                <th>Date of Birth</th>
+                            </tr>
+                            <tr id="marks-table">
+                                <td class="marks-table">000 </td> <!--Roll No -->
+                                <td class="marks-table">000 </td> <!--Student Name -->
+                                <td class="marks-table">000 </td> <!--Father's Name -->
+                                <td class="marks-table">000 </td> <!--Date of birth -->
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <b>
+                            <h2 id="SubjectWise">Subject Wise Marks</h2>
+                        </b>
+                    </div>
+                    <table id="table-Main1">
+                        <div>
+                            <tr>
+                                <th>Sr No.</th>
+                                <th>Subject Name</th>
+                                <th>Max Marks</th>
+                                <th>Obtained Marks</th>
+                                <th>Grade</th>
+                                <th>Result</th>
+                            </tr>
+                            <tr id="marks-table">
+                                <td class="marks-table">1 </td> <!--Sr1 -->
+                                <td class="marks-table">000 </td> <!--C++ Programming -->
+                                <td class="marks-table">000 </td> <!--Max Marks -->
+                                <td class="marks-table">000 </td> <!--Obtained -->
+                                <td class="marks-table">000 </td> <!--Grade -->
+                                <td class="marks-table">000 </td> <!--Result -->
+                            </tr>
+                            <tr id="marks-table">
+                                <td class="marks-table">2</td> <!--Sr2 -->
+                                <td class="marks-table">000 </td> <!--Java Programming -->
+                                <td class="marks-table">000 </td> <!--Max Marks -->
+                                <td class="marks-table">000 </td> <!--Obtained -->
+                                <td class="marks-table">000 </td> <!--Grade -->
+                                <td class="marks-table">000 </td> <!--Result -->
+                            </tr>
+                            <tr id="marks-table">
+                                <td class="marks-table">3</td> <!--Sr3 -->
+                                <td class="marks-table">000 </td> <!--HTML -->
+                                <td class="marks-table">000 </td> <!--Max Marks -->
+                                <td class="marks-table">000 </td> <!--Obtained -->
+                                <td class="marks-table">000 </td> <!--Grade -->
+                                <td class="marks-table">000 </td> <!--Result -->
+                            </tr>
+                            <tr id="marks-table">
+                                <td class="marks-table">4</td> <!--Sr4 -->
+                                <td class="marks-table">000 </td> <!--Mathematics -->
+                                <td class="marks-table">000 </td> <!--Max Marks -->
+                                <td class="marks-table">000 </td> <!--Obtained -->
+                                <td class="marks-table">000 </td> <!--Grade -->
+                                <td class="marks-table">000 </td> <!--Result -->
+                            </tr>
+                            <tr id="marks-table">
+                                <td class="marks-table">5</td> <!--Sr5 -->
+                                <td class="marks-table">000 </td> <!--Full Stack Development -->
+                                <td class="marks-table">000 </td> <!--Max Marks -->
+                                <td class="marks-table">000 </td> <!--Obtained -->
+                                <td class="marks-table">000 </td> <!--Grade -->
+                                <td class="marks-table">000 </td> <!--Result -->
+                            </tr>
+                        </div>
+                    </table>
+                    <div>
+                        <h2 id="ResultSummary">Result Summary</h2>
+                    </div>
+                    <table id="ResultSummary">
+                        <tr>
+                            <th>Total Marks</th>
+                            <th>Maximum Marks</th>
+                            <th>Percentage</th>
+                            <th>Result</th>
+                        </tr>
+                        <tr id="marks-table">
+                            <td class="marks-table">000 </td> <!--Roll No -->
+                            <td class="marks-table">000 </td> <!--Student Name -->
+                            <td class="marks-table">000 </td> <!--Father's Name -->
+                            <td class="marks-table">000 </td> <!--Date of birth -->
+                        </tr>
+                    </table>
                 </div>
-            </table>
-        </section>
-        <section id="hideSheet2">
-            <div>
-                <h2 id="ResultSummary">Result Summary</h2>
             </div>
-            <table id="ResultSummary">
-                <tr>
-                    <th>Total Marks</th>
-                    <th>Maximum Marks</th>
-                    <th>Percentage</th>
-                    <th>Result</th>
-                </tr>
-                <tr id="marks-table">
-                    <td class="marks-table">000 </td> <!--Roll No -->
-                    <td class="marks-table">000 </td> <!--Student Name -->
-                    <td class="marks-table">000 </td> <!--Father's Name -->
-                    <td class="marks-table">000 </td> <!--Date of birth -->
-                </tr>
-            </table>
-        </section>
-    
+        </div>
+    </section>
+
     <script>
-        let hideSheet = document.getElementById("hideSheet");   
+        let hideSheet = document.getElementById("hideSheet");
         let hideSheet1 = document.getElementById("hideSheet1");
         let hideSheet2 = document.getElementById("hideSheet2");
         let button1 = document.getElementById("button1");
-        button1.addEventListener("click" , () =>{
+        button1.addEventListener("click", () => {
             hideSheet.style.display = "block"
-            hideSheet1.style.display = "block"
-            hideSheet2.style.display = "block"
         })
     </script>
 </body>
-
 </html>
