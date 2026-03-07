@@ -136,8 +136,9 @@
             background-color: rgb(51, 73, 107);
             color: white;
         }
-        input{
-        text-transform: uppercase;
+
+        input {
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -197,11 +198,12 @@
                 </div>
                 <div id="Course-box">
                     <h3>Mathematics:-</h3>
-                    <input class="College-name" type="text"  id="inPutMathematicsMarks" placeholder="Mathematics">
+                    <input class="College-name" type="text" id="inPutMathematicsMarks" placeholder="Mathematics">
                 </div>
                 <div id="Course-box">
                     <h3>Full Stack Development:-</h3>
-                    <input class="College-name" type="text" id="InputFullStackDevMarks" placeholder="Full Stack Development">
+                    <input class="College-name" type="text" id="InputFullStackDevMarks"
+                        placeholder="Full Stack Development">
                 </div>
             </div>
         </div>
@@ -271,7 +273,7 @@
                                 <td class="marks-table">100 </td> <!--Max Marks -->
                                 <td class="marks-table" id="OutPutMarkS">000 </td> <!--Obtained -->
                                 <td class="marks-table">000 </td> <!--Grade -->
-                                <td class="marks-table">000 </td> <!--Result -->
+                                <td id="cresult" class="marks-table">000 </td> <!--Result -->
                             </tr>
                             <tr id="marks-table">
                                 <td class="marks-table">2</td> <!--Sr2 -->
@@ -318,9 +320,9 @@
                             <th class="l-t">Result</th>
                         </tr>
                         <tr id="marks-table">
-                            <td class="marks-table">000 </td> <!--Roll No -->
-                            <td class="marks-table">000 </td> <!--Student Name -->
-                            <td class="marks-table">000 </td> <!--Father's Name -->
+                            <td id="totalMarks" class="marks-table">000 </td> <!--Roll No -->
+                            <td class="marks-table">500 </td> <!--Student Name -->
+                            <td id="percentage" class="marks-table">000 </td> <!--Father's Name -->
                             <td class="marks-table">000 </td> <!--Date of birth -->
                         </tr>
                     </table>
@@ -353,6 +355,12 @@
         let outPutMathematicsmarks = document.getElementById("outPutMathematicsmarks"); //outPutMathematicsmarks
         let InputFullStackDevMarks = document.getElementById("InputFullStackDevMarks"); //InputFullStackDevMarks
         let outPutFullStackDevMarks = document.getElementById("outPutFullStackDevMarks");//outPutFullStackDevMarks
+        let totalMarks = document.getElementById("totalMarks");
+        let outPutpercentage = document.getElementById("percentage");
+        let cresult = document.getElementById("cresult");
+
+
+
 
 
         button1.addEventListener("click", () => {
@@ -368,8 +376,40 @@
             outPutMathematicsmarks.innerText = inPutMathematicsMarks.value;
             outPutFullStackDevMarks.innerText = InputFullStackDevMarks.value;
 
-        })
+            let cprog = Number(inputCPrograming.value);
+            let html = Number(inPutHTMLMarks.value);
+            let fsd = Number(InputFullStackDevMarks.value);
+            let Mathematics = Number(inPutMathematicsMarks.value);
+            let java = Number(inPutJavaProgrammingMarks.value);
+            let total = cprog + html + fsd + Mathematics + java; // Total Marks
 
+            console.log(total); //log
+            totalMarks.innerText = total;
+            // Calculate percentage once
+            let percentage = total / 5;
+            outPutpercentage.innerText = percentage + "%";
+
+            // Logic: Start from the top
+            if (percentage >= 90) {
+                console.log("A Grade");
+            } else if (percentage >= 70) {
+                console.log("B Grade");
+            } else if (percentage >= 50) {
+                console.log("C Grade");
+            } else if (percentage >= 33) {
+                console.log("D Grade");
+            }
+
+
+
+
+            if (cprog >= 35) {
+                console.log("psss");
+                cresult.innerText = "Pass"
+            }
+
+
+        })
 
 
 
