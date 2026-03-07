@@ -79,13 +79,19 @@
         }
 
         th {
-            background-color: rgb(0 0 0 / 11%)
+            background-color: rgb(0 0 0 / 11%);
+            font-size: 1.4vw;
+            
+        }
+        td{
+            font-size: 1.5vw;
         }
 
         #table-Main {
             display: flex;
             justify-content: center;
             margin-top: 2vw;
+            
         }
 
         #ResultSummary,
@@ -93,6 +99,7 @@
             display: flex;
             justify-content: center;
             margin-top: 3vh;
+            font-size: 2vw;
         }
 
         #ResultSummary,
@@ -116,15 +123,17 @@
             width: 60%;
             display: flex;
             justify-content: center;
+            box-shadow: 0px 0px 3px 0px #33496B;
+            padding: 3vw;
         }
 
         .h-c {
-            width: 11vw;
+            width: 12.05vw;
             padding: 0.4vw;
         }
 
         .l-t {
-            width: 11vw;
+            width: 9.46vw;
             padding: 0.4vw;
         }
 
@@ -140,6 +149,19 @@
         input {
             text-transform: uppercase;
         }
+        #main-Collage-Header{
+            font-size: 2vw;
+        }
+        #main-Collage-Header1{
+            font-size:1.8vw;
+        }
+        .main-Collage-Header3{
+            font-size: 1.6vw;
+        }
+        .c-th{
+            width: 7.4vw;
+        }
+        
     </style>
 </head>
 
@@ -156,7 +178,7 @@
     <section>
         <div>
             <div>
-                <h3>College / School Name :- Raj Computer Center</h3>
+                <h3 id="main-Collage-Header1">College / School Name :- Raj Computer Center</h3>
             </div>
             <div id="input-main">
                 <div id="Course-box">
@@ -221,16 +243,16 @@
                     </b>
                 </div>
                 <div>
-                    <h3>College / School Name :- Raj Computer Center</h3>
+                    <h3 id="main-Collage-Header1">College / School Name :- Raj Computer Center</h3>
                 </div>
                 <div id="main-h">
                     <div id="Course-box">
-                        <h3>Course:-</h3>
+                        <h3 class="main-Collage-Header3">Course:-</h3>
                         <h3 id="marks-course"></h3>
                     </div>
                     <div>
                         <div id="Course-box">
-                            <h3>Semester:-</h3>
+                            <h3 class="main-Collage-Header3">Semester:-</h3>
                             <h3 id="marks-semester"></h3>
                         </div>
                     </div>
@@ -260,19 +282,19 @@
                         </div>
                         <table id="table-Main1">
                             <tr>
-                                <th>Sr No.</th>
-                                <th>Subject Name</th>
-                                <th>Max Marks</th>
-                                <th>Obtained Marks</th>
-                                <th>Grade</th>
-                                <th>Result</th>
+                                <th class="c-th">Sr No.</th>
+                                <th class="c-th">Subject Name</th>
+                                <th class="c-th">Max Marks</th>
+                                <th class="c-th">Obtained Marks</th>
+                                <th class="c-th">Grade</th>
+                                <th class="c-th">Result</th>
                             </tr>
                             <tr id="marks-table">
                                 <td class="marks-table">1 </td> <!--Sr1 -->
                                 <td class="marks-table">C++ Programming</td> <!--C++ Programming -->
                                 <td class="marks-table">100 </td> <!--Max Marks -->
                                 <td class="marks-table" id="OutPutMarkS">000 </td> <!--Obtained -->
-                                <td class="marks-table">000 </td> <!--Grade -->
+                                <td class="marks-table" id="OutPutCgrade">000 </td> <!--Grade -->
                                 <td id="cresult" class="marks-table">000 </td> <!--Result -->
                             </tr>
                             <tr id="marks-table">
@@ -280,32 +302,33 @@
                                 <td class="marks-table">Java Programming </td> <!--Java Programming -->
                                 <td class="marks-table">100 </td> <!--Max Marks -->
                                 <td class="marks-table" id="OutPutJavaProgrammingMarks">000 </td> <!--Obtained -->
-                                <td class="marks-table">000 </td> <!--Grade -->
-                                <td class="marks-table">000 </td> <!--Result -->
+                                <td class="marks-table" id="outPutJavaGrade">000 </td> <!--Grade -->
+                                <td class="marks-table" id="OutPutJavaProgrammingSubjectWiseMarks">000 </td>
+                                <!--Result -->
                             </tr>
                             <tr id="marks-table">
                                 <td class="marks-table">3</td> <!--Sr3 -->
                                 <td class="marks-table">HTML </td> <!--HTML -->
                                 <td class="marks-table">100 </td> <!--Max Marks -->
                                 <td class="marks-table" id="outPutHTMLMarks">000 </td> <!--Obtained -->
-                                <td class="marks-table">000 </td> <!--Grade -->
-                                <td class="marks-table">000 </td> <!--Result -->
+                                <td class="marks-table" id="OutPuthtmlgrade">000 </td> <!--Grade -->
+                                <td class="marks-table" id="outputResulthtml">000 </td> <!--Result -->
                             </tr>
                             <tr id="marks-table">
                                 <td class="marks-table">4</td> <!--Sr4 -->
                                 <td class="marks-table">Mathematics </td> <!--Mathematics -->
                                 <td class="marks-table">100 </td> <!--Max Marks -->
                                 <td class="marks-table" id="outPutMathematicsmarks">000 </td> <!--Obtained -->
-                                <td class="marks-table">000 </td> <!--Grade -->
-                                <td class="marks-table">000 </td> <!--Result -->
+                                <td class="marks-table" id="outputmathematicsgrade">000 </td> <!--Grade -->
+                                <td class="marks-table" id="outputResltmath">000 </td> <!--Result -->
                             </tr>
                             <tr id="marks-table">
                                 <td class="marks-table">5</td> <!--Sr5 -->
                                 <td class="marks-table">Full Stack Development</td> <!--Full Stack Development -->
                                 <td class="marks-table">100 </td> <!--Max Marks -->
                                 <td class="marks-table" id="outPutFullStackDevMarks">000 </td> <!--Obtained -->
-                                <td class="marks-table">000 </td> <!--Grade -->
-                                <td class="marks-table">000 </td> <!--Result -->
+                                <td class="marks-table" id="outputfsdgrade">000 </td> <!--Grade -->
+                                <td class="marks-table" id="outputResultFSD">000 </td> <!--Result -->
                             </tr>
                     </div>
                     </table>
@@ -317,13 +340,16 @@
                             <th class="l-t">Total Marks</th>
                             <th class="l-t">Maximum Marks</th>
                             <th class="l-t">Percentage</th>
+                            <th class="l-t">Grade</th>
                             <th class="l-t">Result</th>
                         </tr>
                         <tr id="marks-table">
                             <td id="totalMarks" class="marks-table">000 </td> <!--Roll No -->
                             <td class="marks-table">500 </td> <!--Student Name -->
                             <td id="percentage" class="marks-table">000 </td> <!--Father's Name -->
-                            <td class="marks-table">000 </td> <!--Date of birth -->
+                            <td class="marks-table" id="totalGrade" >000 </td> <!--Total Grade -->
+                            <td class="marks-table" id="TotalResult">000 </td> <!--Total Result -->
+
                         </tr>
                     </table>
                 </div>
@@ -358,8 +384,18 @@
         let totalMarks = document.getElementById("totalMarks");
         let outPutpercentage = document.getElementById("percentage");
         let cresult = document.getElementById("cresult");
-
-
+        let OutPutCgrade = document.getElementById("OutPutCgrade");
+        let OutPutJavaProgrammingSubjectWiseMarks = document.getElementById("OutPutJavaProgrammingSubjectWiseMarks");
+        let outPutJavaGrade = document.getElementById("outPutJavaGrade");
+        let outputResulthtml = document.getElementById("outputResulthtml");
+        let OutPuthtmlgrade = document.getElementById("OutPuthtmlgrade");
+        let outputResltmath = document.getElementById("outputResltmath");
+        let outputmathematicsgrade = document.getElementById("outputmathematicsgrade");
+        let outputResultFSD = document.getElementById("outputResultFSD");
+        let outputfsdgrade = document.getElementById("outputfsdgrade");
+        let TotalResult = document.getElementById("TotalResult");
+        let totalGrade = document.getElementById("totalGrade");
+    
 
 
 
@@ -390,31 +426,199 @@
             outPutpercentage.innerText = percentage + "%";
 
             // Logic: Start from the top
-            if (percentage >= 90) {
-                console.log("A Grade");
-            } else if (percentage >= 70) {
-                console.log("B Grade");
-            } else if (percentage >= 50) {
-                console.log("C Grade");
-            } else if (percentage >= 33) {
-                console.log("D Grade");
+            if (percentage < 30){
+                totalGrade.innerText= "Fail(F)"
+            }else if(percentage < 50){
+                totalGrade.innerText = "E"
+            }else if(percentage < 60){
+                totalGrade.innerText = "D"
+            }else if(percentage < 70){
+                totalGrade.innerText = "C"
+            }else if(percentage < 80){
+                totalGrade.innerText = "B"
+            }else if(percentage < 90){
+                totalGrade.innerText = "A"
+            }else if(percentage < 100){
+                totalGrade.innerText = "A+"
+            } else if(percentage > 100) {
+                totalGrade.innerText = "Wrong Marks"
             }
 
+            //Cprogramming logic
+            if (cprog < 30) {
+                console.log("Fail");
+                cresult.innerText = "Fail";
+                TotalResult.innerText = "Fail"
+            } else if (cprog < 100) {
+                console.log("pass")
+                cresult.innerText = "Pass";
+                TotalResult.innerText = "Pass"
 
-
-
-            if (cprog >= 35) {
-                console.log("psss");
-                cresult.innerText = "Pass"
+            } else {
+                cresult.innerText = "Wrong Marks"
+                console.log("Wrong Marks");
             }
 
+            // C++ Grade
+            if (cprog <= 30) {
+                console.log("fail");
+                OutPutCgrade.innerText = "Fail(F)"
+            }
+            else if (cprog < 50) {
+                console.log("E");
+                OutPutCgrade.innerText = "E";
 
+            } else if (cprog < 60) {
+                console.log("D");
+                OutPutCgrade.innerText = "D";
+
+            } else if (cprog < 70) {
+                console.log("C");
+                OutPutCgrade.innerText = "C";
+            } else if (cprog < 80) {
+                console.log("B");
+                OutPutCgrade.innerText = "B";
+            }
+            else if (cprog < 90) {
+                console.log("A");
+                OutPutCgrade.innerText = "A";
+
+            }
+            else if (cprog <= 100) {
+                console.log("A+");
+                OutPutCgrade.innerText = "A+";
+
+            }
+            else if (cprog > 100) {
+                console.log("Wrong Marks");
+                OutPutCgrade.innerText = "Wrong Marks"
+            }
+            //Java Programming Logic
+            if (java < 30) {
+                console.log("F");
+                OutPutJavaProgrammingSubjectWiseMarks.innerText = "Fail";
+                TotalResult.innerText = "Fail"
+            } else if (java <= 100) {
+                console.log("Pass");
+                OutPutJavaProgrammingSubjectWiseMarks.innerText = "Pass";
+                TotalResult.innerText = "Pass";
+            } else if (java > 100) {
+                console.log("Wrong Marks");
+                OutPutJavaProgrammingSubjectWiseMarks.innerText = "Wrong Marks"
+            }
+            //java grade
+            if (java < 30) {
+                console.log("Fail");
+                outPutJavaGrade.innerText = "Fail(F)"
+            } else if (java < 50) {
+                outPutJavaGrade.innerText = "E"
+            } else if (java < 60) {
+                outPutJavaGrade.innerText = "D"
+            }
+            else if (java < 70) {
+                outPutJavaGrade.innerText = "C"
+            }
+            else if (java < 80) {
+                outPutJavaGrade.innerText = "B"
+            } else if (java < 90) {
+                outPutJavaGrade.innerText = "A"
+            } else if (java < 100) {
+                outPutJavaGrade.innerText = "A+"
+            }
+            else if (java > 100) {
+                outPutJavaGrade.innerText = "Wrong Marks"
+            }
+
+            //HTML Logic
+            if (html < 30) {
+                outputResulthtml.innerText = "Fail";
+                TotalResult.innerText = "Fail"
+            } else if (html <= 100) {
+                outputResulthtml.innerText = "Pass";
+                TotalResult.innerText = "Pass";
+            } else if (html > 100) {
+                outputResulthtml.innerText = "Wrong Marks"
+            };
+            //html Grade 
+            if (html < 30) {
+                OutPuthtmlgrade.innerText = "Fail(F)"
+            }
+            else if (html < 50) {
+                OutPuthtmlgrade.innerText = "E"
+            } else if (html < 60) {
+                OutPuthtmlgrade.innerText = "D"
+            } else if (html < 70) {
+                OutPuthtmlgrade.innerText = "C"
+            }
+            else if (html < 80) {
+                OutPuthtmlgrade.innerText = "B"
+            }
+            else if (html < 90) {
+                OutPuthtmlgrade.innerText = "A"
+            } else if (html < 100) {
+                OutPuthtmlgrade.innerText = "A+"
+            } else if (html > 100) {
+                OutPuthtmlgrade.innerText = "Wrong Marks"
+            }
+
+            //mathematics
+            if (Mathematics < 30) {
+                outputResltmath.innerText = "Fail"
+                TotalResult.innerText = "Fail"
+            } else if (Mathematics < 100) {
+                outputResltmath.innerText = "Pass";
+                TotalResult.innerText = "Pass";
+            } else if (Mathematics > 100) {
+                outputResltmath.innerText = "Wrong Marks"
+            }
+            //mathematics logic
+            if (Mathematics < 30) {
+                outputmathematicsgrade.innerText = "Fail(F)"
+            }
+            else if (Mathematics < 50) {
+                outputmathematicsgrade.innerText = "E"
+            } else if (Mathematics < 60) {
+                outputmathematicsgrade.innerText = "D"
+            } else if (Mathematics < 70) {
+                outputmathematicsgrade.innerText = "C"
+            } else if (Mathematics < 80) {
+                outputmathematicsgrade.innerText = "B"
+            } else if (Mathematics < 90) {
+                outputmathematicsgrade.innerText = "A"
+            } else if (Mathematics < 100) {
+                outputmathematicsgrade.innerText = "+"
+            } else if (Mathematics > 100) {
+                outputmathematicsgrade.innerText = "Wrong Marks"
+            }
+            //full Stack Development 
+            if (fsd < 30) {
+                outputResultFSD.innerText = "Fail";
+                TotalResult.innerText = "Fail"
+            } else if (fsd < 100) {
+                outputResultFSD.innerText = "Pass"
+                TotalResult.innerText = "Pass"
+            } else if (fsd > 100) {
+                outputResultFSD.innerText = "WrongMarks"
+            }
+            // Full Stack Development  logic
+            if (fsd < 30) {
+                outputfsdgrade.innerText = "Fail(F)"
+            } else if (fsd < 50) {
+                outputfsdgrade.innerText = "E"
+            } else if (fsd < 60) {
+                outputfsdgrade.innerText = "D"
+            } else if (fsd < 70) {
+                outputfsdgrade.innerText = "C"
+            } else if (fsd < 80) {
+                outputfsdgrade.innerText = "B"
+            } else if (fsd < 90) {
+                outputfsdgrade.innerText = "A"
+            } else if (fsd < 100) {
+                outputfsdgrade.innerText = "A+"
+            } else if (fsd > 100) {
+                outputfsdgrade.innerText = "Wrong Marks"
+            }
         })
-
-
-
-
     </script>
 </body>
-
 </html>
