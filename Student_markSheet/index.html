@@ -109,7 +109,7 @@
         }
 
         #hideSheet {
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
         }
@@ -396,11 +396,14 @@
         let outputfsdgrade = document.getElementById("outputfsdgrade");
         let TotalResult = document.getElementById("TotalResult");
         let totalGrade = document.getElementById("totalGrade");
+        let hideSheet = document.getElementById("hideSheet");
     
 
 
 
         button1.addEventListener("click", () => {
+            hideSheet.style.display = "flex";
+
             OutPutCourse.innerText = Course.value;
             OutPutSemester.innerText = InputSemester.value;
             outputRollNumber.innerText = inPutRollNumber.value;
@@ -619,6 +622,7 @@
             } else if (fsd > 100) {
                 outputfsdgrade.innerText = "Wrong Marks"
             }
+            
         })
     </script>
 </body>
