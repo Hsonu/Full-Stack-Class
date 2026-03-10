@@ -19,14 +19,16 @@
             padding-bottom: 1px;
         }
 
-        #Course-box1 , #Course-box {
+        #Course-box1,
+        #Course-box {
             display: flex;
             margin-top: 1vh;
             align-items: center;
             /* justify-content: center; */
             gap: 1vw;
         }
-        #Course-box1{
+
+        #Course-box1 {
             gap: 0;
         }
 
@@ -44,9 +46,10 @@
             width: 10vw;
             height: 1.3vw;
 
-            
+
         }
-        .College-name:hover{
+
+        .College-name:hover {
             box-shadow: 0PX 0PX 2px 0px red;
         }
 
@@ -226,7 +229,7 @@
         }
 
         #p-textJava {
-                margin-left: 8.5vw;
+            margin-left: 8.5vw;
         }
 
         #p-textMath {
@@ -240,17 +243,19 @@
         ::placeholder {
             font-size: 0.8vw;
         }
-        .textmainJava{
+
+        .textmainJava {
             gap: 0px;
         }
-        #inPutJavaProgrammingMarks{
-                margin-left: 0.1vw;
+
+        #inPutJavaProgrammingMarks {
+            margin-left: 0.1vw;
         }
     </style>
 </head>
 
 <body>
-    <header>
+    <header id="hide1">
         <div id="heading-m">
             <div id="heading">
                 <b>
@@ -259,7 +264,7 @@
             </div>
     </header>
 
-    <section>
+    <section id="hideHead">
         <div>
             <div>
                 <h3 id="main-Collage-Header1">College / School Name :- Raj Computer Center</h3>
@@ -487,12 +492,16 @@
         let TotalResult = document.getElementById("TotalResult");
         let totalGrade = document.getElementById("totalGrade");
         let hideSheet = document.getElementById("hideSheet");
-
+        let hideHead = document.getElementById("hideHead");
+        let hide1 = document.getElementById("hide1");
 
 
 
         button1.addEventListener("click", () => {
             hideSheet.style.display = "flex";
+            hideHead.style.display = "none"
+            hide1.style.display = "none "
+
 
             OutPutCourse.innerText = Course.value;
             OutPutSemester.innerText = InputSemester.value;
@@ -537,181 +546,6 @@
             } else if (percentage > 100) {
                 totalGrade.innerText = "Wrong Marks"
             }
-            /*
-                        //Cprogramming logic
-                        if (cprog < 30) {
-                            console.log("Fail");
-                            cresult.innerText = "Fail";
-                            TotalResult.innerText = "Fail"
-                        } else if (cprog < 100) {
-                            console.log("pass")
-                            cresult.innerText = "Pass";
-                            TotalResult.innerText = "Pass"
-            
-                        } else {
-                            cresult.innerText = "Wrong Marks"
-                            console.log("Wrong Marks");
-                        }
-            
-                        // C++ Grade
-                        if (cprog < 30) {
-                            console.log("fail");
-                            OutPutCgrade.innerText = "Fail(F)"
-                        }
-                        else if (cprog < 50) {
-                            console.log("E");
-                            OutPutCgrade.innerText = "E";
-            
-                        } else if (cprog < 60) {
-                            console.log("D");
-                            OutPutCgrade.innerText = "D";
-            
-                        } else if (cprog < 70) {
-                            console.log("C");
-                            OutPutCgrade.innerText = "C";
-                        } else if (cprog < 80) {
-                            console.log("B");
-                            OutPutCgrade.innerText = "B";
-                        }
-                        else if (cprog < 90) {
-                            console.log("A");
-                            OutPutCgrade.innerText = "A";
-            
-                        }
-                        else if (cprog <= 100) {
-                            console.log("A+");
-                            OutPutCgrade.innerText = "A+";
-            
-                        }
-                        else if (cprog > 100) {
-                            console.log("Wrong Marks");
-                            OutPutCgrade.innerText = "Wrong Marks"
-                        }
-                        //Java Programming Logic
-                        if (java < 30) {
-                            console.log("F");
-                            OutPutJavaProgrammingSubjectWiseMarks.innerText = "Fail";
-                            TotalResult.innerText = "Fail"
-                        } else if (java <= 100) {
-                            console.log("Pass");
-                            OutPutJavaProgrammingSubjectWiseMarks.innerText = "Pass";
-                            TotalResult.innerText = "Pass";
-                        } else if (java > 100) {
-                            console.log("Wrong Marks");
-                            OutPutJavaProgrammingSubjectWiseMarks.innerText = "Wrong Marks"
-                        }
-                        //java grade
-                        if (java < 30) {
-                            console.log("Fail");
-                            outPutJavaGrade.innerText = "Fail(F)"
-                        } else if (java < 50) {
-                            outPutJavaGrade.innerText = "E"
-                        } else if (java < 60) {
-                            outPutJavaGrade.innerText = "D"
-                        }
-                        else if (java < 70) {
-                            outPutJavaGrade.innerText = "C"
-                        }
-                        else if (java < 80) {
-                            outPutJavaGrade.innerText = "B"
-                        } else if (java < 90) {
-                            outPutJavaGrade.innerText = "A"
-                        } else if (java < 100) {
-                            outPutJavaGrade.innerText = "A+"
-                        }
-                        else if (java > 100) {
-                            outPutJavaGrade.innerText = "Wrong Marks"
-                        }
-            
-                        //HTML Logic
-                        if (html < 30) {
-                            outputResulthtml.innerText = "Fail";
-                            TotalResult.innerText = "Fail"
-                        } else if (html <= 100) {
-                            outputResulthtml.innerText = "Pass";
-                            TotalResult.innerText = "Pass";
-                        } else if (html > 100) {
-                            outputResulthtml.innerText = "Wrong Marks"
-                        };
-                        //html Grade 
-                        if (html < 30) {
-                            OutPuthtmlgrade.innerText = "Fail(F)"
-                        }
-                        else if (html < 50) {
-                            OutPuthtmlgrade.innerText = "E"
-                        } else if (html < 60) {
-                            OutPuthtmlgrade.innerText = "D"
-                        } else if (html < 70) {
-                            OutPuthtmlgrade.innerText = "C"
-                        }
-                        else if (html < 80) {
-                            OutPuthtmlgrade.innerText = "B"
-                        }
-                        else if (html < 90) {
-                            OutPuthtmlgrade.innerText = "A"
-                        } else if (html < 100) {
-                            OutPuthtmlgrade.innerText = "A+"
-                        } else if (html > 100) {
-                            OutPuthtmlgrade.innerText = "Wrong Marks"
-                        }
-            
-                        //mathematics
-                        if (Mathematics < 30) {
-                            outputResltmath.innerText = "Fail"
-                            TotalResult.innerText = "Fail"
-                        } else if (Mathematics < 100) {
-                            outputResltmath.innerText = "Pass";
-                            TotalResult.innerText = "Pass";
-                        } else if (Mathematics > 100) {
-                            outputResltmath.innerText = "Wrong Marks"
-                        }
-                        //mathematics logic
-                        if (Mathematics < 30) {
-                            outputmathematicsgrade.innerText = "Fail(F)"
-                        }
-                        else if (Mathematics < 50) {
-                            outputmathematicsgrade.innerText = "E"
-                        } else if (Mathematics < 60) {
-                            outputmathematicsgrade.innerText = "D"
-                        } else if (Mathematics < 70) {
-                            outputmathematicsgrade.innerText = "C"
-                        } else if (Mathematics < 80) {
-                            outputmathematicsgrade.innerText = "B"
-                        } else if (Mathematics < 90) {
-                            outputmathematicsgrade.innerText = "A"
-                        } else if (Mathematics < 100) {
-                            outputmathematicsgrade.innerText = "A+"
-                        } else if (Mathematics > 100) {
-                            outputmathematicsgrade.innerText = "Wrong Marks"
-                        }
-                        //full Stack Development 
-                        if (fsd < 30) {
-                            outputResultFSD.innerText = "Fail";
-                            TotalResult.innerText = "Fail"
-                        } else if (fsd < 100) {
-                            outputResultFSD.innerText = "Pass"
-                            TotalResult.innerText = "Pass"
-                        } else if (fsd > 100) {
-                            outputResultFSD.innerText = "WrongMarks"
-                        }
-                        // Full Stack Development  logic
-                        if (fsd < 30) {
-                            outputfsdgrade.innerText = "Fail(F)"
-                        } else if (fsd < 50) {
-                            outputfsdgrade.innerText = "E"
-                        } else if (fsd < 60) {
-                            outputfsdgrade.innerText = "D"
-                        } else if (fsd < 70) {
-                            outputfsdgrade.innerText = "C"
-                        } else if (fsd < 80) {
-                            outputfsdgrade.innerText = "B"
-                        } else if (fsd < 90) {
-                            outputfsdgrade.innerText = "A"
-                        } else if (fsd < 100) {
-                            outputfsdgrade.innerText = "A+"
-                        } else if (fsd > 100) {
-                            outputfsdgrade.innerText = "Wrong Marks"
-                        }*/
             function getGrade(Marks) {
                 if (Marks < 30) return "Fail"
                 if (Marks < 50) return "E"
@@ -751,9 +585,9 @@
             }
             else {
                 TotalResult.innerText = "Wrong Marks"
+                
             }
         })    
     </script>
 </body>
-
 </html>

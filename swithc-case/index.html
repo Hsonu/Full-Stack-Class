@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        let a = Number(prompt("Enter the first Number"));
+        let operation = prompt("What to do (+, -, *, /)");
+        let b = Number(prompt("Enter the Second Number"));
+
+        switch (operation) {
+            case "+":
+                console.log("Result: " + (a + b));
+                break;
+            case "-":
+                console.log("Result: " + (a - b));
+                break;
+            case "*":
+                console.log("Result: " + (a * b));
+                break;
+            case "/":
+                // Zero check logic
+                if (b === 0) {
+                    console.log("Error: 0 se divide nahi kar sakte!");
+                } else {
+                    console.log("Result: " + (a / b));
+                }
+                break;
+            default:
+                console.log("Galat operation! Please +, -, *, ya / use karein.");
+                break;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
