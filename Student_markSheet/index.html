@@ -19,11 +19,15 @@
             padding-bottom: 1px;
         }
 
-        #Course-box {
+        #Course-box1 , #Course-box {
             display: flex;
             margin-top: 1vh;
             align-items: center;
             /* justify-content: center; */
+            gap: 1vw;
+        }
+        #Course-box1{
+            gap: 0;
         }
 
         #heading-m {
@@ -34,16 +38,23 @@
 
         .College-name {
             display: flex;
-            border: 2px solid #00000038;
-            padding: 0.7vw;
+            border: 1px solid #00000038;
+            padding: 0.3vw;
             border-radius: 10px;
-            justify-content: center;
+            width: 10vw;
+            height: 1.3vw;
+
+            
+        }
+        .College-name:hover{
+            box-shadow: 0PX 0PX 2px 0px red;
         }
 
         #input-main {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            /* flex-wrap: wrap; */
         }
 
         #gen-btn {
@@ -166,6 +177,75 @@
         .c-th {
             width: 7.4vw;
         }
+
+        .p-text {
+            font-size: 0.90vw;
+        }
+
+
+        #divpart {
+            display: flex;
+            /* gap: 11vw; */
+            justify-content: space-between;
+
+        }
+
+        #divpart1 {
+            display: flex;
+            /* gap: 5.85vw; */
+        }
+
+        #divpart2 {
+            display: flex;
+            /* gap: 6.5vw; */
+        }
+
+        #inPutMathematicsMarks {
+            display: flex;
+            /* gap: 10px; */
+        }
+
+        #p-text1 {
+            margin-left: 3vw;
+        }
+
+        #p-text2 {
+            margin-left: 3vw;
+        }
+
+        #p-textSemester {
+            margin-left: 3vw;
+        }
+
+        #p-text-dob {
+            margin-left: 11.1vw;
+        }
+
+        #p-textC {
+            margin-left: 5.65vw;
+        }
+
+        #p-textJava {
+                margin-left: 8.5vw;
+        }
+
+        #p-textMath {
+            margin-left: 11.4vw;
+        }
+
+        #text-fsd {
+            margin-left: 3.65vw;
+        }
+
+        ::placeholder {
+            font-size: 0.8vw;
+        }
+        .textmainJava{
+            gap: 0px;
+        }
+        #inPutJavaProgrammingMarks{
+                margin-left: 0.1vw;
+        }
     </style>
 </head>
 
@@ -185,51 +265,57 @@
                 <h3 id="main-Collage-Header1">College / School Name :- Raj Computer Center</h3>
             </div>
             <div id="input-main">
-                <div id="Course-box">
-                    <h3>Course:-</h3>
-                    <input class="College-name" id="StudentCourse" type="text" placeholder="Course">
+                <div id="divpart">
+                    <div id="Course-box">
+                        <h3 class="p-text" id="p-text1">Course:-</h3>
+                        <input class="College-name" id="StudentCourse" type="text" placeholder="Course">
+                    </div>
+                    <div id="Course-box">
+                        <h3 class="p-text" id="p-textSemester">Semester:-</h3>
+                        <input class="College-name" id="InputSemester" type="text" placeholder="Semester">
+                    </div>
+                    <div id="Course-box">
+                        <h3 class="p-text">Roll No:-</h3>
+                        <input class="College-name" id="inPutRollNumber" type="text" placeholder="Roll No">
+                    </div>
+                    <div id="Course-box">
+                        <h3 class="p-text">Student Name:-</h3>
+                        <input class="College-name" id="inPutStudentName" type="text" placeholder="Student Name">
+                    </div>
                 </div>
-                <div id="Course-box">
-                    <h3>Semester:-</h3>
-                    <input class="College-name" id="InputSemester" type="text" placeholder="Semester">
+                <div id="divpart1">
+                    <div id="Course-box">
+                        <h3 class="p-text">Father's Name:-</h3>
+                        <input class="College-name" id="InPutFaterName" type="text" placeholder="Father's Name">
+                    </div>
+                    <div id="Course-box">
+                        <h3 class="p-text" id="p-text-dob">Date of Birth :-</h3>
+                        <input class="College-name" id="inPutDateOfBirth" type="date" placeholder="Student Name">
+                    </div>
+                    <div id="Course-box">
+                        <h3 class="p-text" id="p-textC">C++ Programming:-</h3>
+                        <input class="College-name" type="text" id="inputCPrograming" placeholder="C++ Programming">
+                    </div>
+                    <div id="Course-box1" class="textmainJava">
+                        <h3 class="p-text" id="p-textJava">Java Programming:-</h3>
+                        <input class="College-name" id="inPutJavaProgrammingMarks" type="text"
+                            placeholder="Java Programming">
+                    </div>
                 </div>
-                <div id="Course-box">
-                    <h3>Roll No:-</h3>
-                    <input class="College-name" id="inPutRollNumber" type="text" placeholder="Roll No">
-                </div>
-                <div id="Course-box">
-                    <h3>Student Name:-</h3>
-                    <input class="College-name" id="inPutStudentName" type="text" placeholder="Student Name">
-                </div>
-                <div id="Course-box">
-                    <h3>Father's Name:-</h3>
-                    <input class="College-name" id="InPutFaterName" type="text" placeholder="Father's Name">
-                </div>
-                <div id="Course-box">
-                    <h3>Date of Birth :-</h3>
-                    <input class="College-name" id="inPutDateOfBirth" type="date" placeholder="Student Name">
-                </div>
-                <div id="Course-box">
-                    <h3>C++ Programming:-</h3>
-                    <input class="College-name" type="text" id="inputCPrograming" placeholder="C++ Programming">
-                </div>
-                <div id="Course-box">
-                    <h3>Java Programming:-</h3>
-                    <input class="College-name" id="inPutJavaProgrammingMarks" type="text"
-                        placeholder="Java Programming">
-                </div>
-                <div id="Course-box">
-                    <h3>HTML:-</h3>
-                    <input class="College-name" type="text" id="inPutHTMLMarks" placeholder="HTML">
-                </div>
-                <div id="Course-box">
-                    <h3>Mathematics:-</h3>
-                    <input class="College-name" type="text" id="inPutMathematicsMarks" placeholder="Mathematics">
-                </div>
-                <div id="Course-box">
-                    <h3>Full Stack Development:-</h3>
-                    <input class="College-name" type="text" id="InputFullStackDevMarks"
-                        placeholder="Full Stack Development">
+                <div id="divpart2">
+                    <div id="Course-box">
+                        <h3 class="p-text" id="p-text2">HTML:-</h3>
+                        <input class="College-name" type="text" id="inPutHTMLMarks" placeholder="HTML">
+                    </div>
+                    <div id="Course-box">
+                        <h3 class="p-text" id="p-textMath">Mathematics:-</h3>
+                        <input class="College-name" type="text" id="inPutMathematicsMarks" placeholder="Mathematics">
+                    </div>
+                    <div id="Course-box">
+                        <h3 class="p-text" id="text-fsd">Full Stack Development:-</h3>
+                        <input class="College-name" type="text" id="InputFullStackDevMarks"
+                            placeholder="Full Stack Development">
+                    </div>
                 </div>
             </div>
         </div>
