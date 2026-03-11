@@ -169,7 +169,7 @@
                     </div>
                     <div>
                         <p>Rate</p>
-                        <input type="text" placeholder="Rate"> <!--input Rate-->
+                        <input id="inputRate" type="text" placeholder="Rate"> <!--input Rate-->
                     </div>
                 </div>
                 <button type="button" id="button">Chack</button>
@@ -234,11 +234,11 @@
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>Product Name</td>
-                            <td>10</td>
-                            <td>100</td>
+                            <td id="outputPrductName">Product Name</td> <!--outputPrductName-->
+                            <td id="OutputQty">10</td> <!--OutputQty-->
+                            <td id="OutPutRate">100</td> <!--OutPutrate-->
                             <td>
-                                <p>Amount</p>
+                                <p id="OutputAmount">Amount</p>
                                 <div class="mainbox1">
                                     <div class="mainbox">
                                         <div class="box">
@@ -259,7 +259,9 @@
                                         <div class="box"></div>
                                     </div>
                                 </div>
+                            </td>
                         </tr>
+
                     </table>
 
                 </div>
@@ -292,14 +294,27 @@
         let button = document.getElementById("button"); // button
         let inputParticulars = document.getElementById("inputParticulars"); //inputParticulars
         let inputQty = document.getElementById("inputQty"); //inputQty
+        let inputRate = document.getElementById("inputRate"); // inputRate
+        let outputPrductName = document.getElementById("outputPrductName") //outputPrductName
+        let OutputQty = document.getElementById("OutputQty"); //OutputQty
+        let OutPutRate = document.getElementById("OutPutRate") //OutPutRate
+        let OutputAmount = document.getElementById("OutputAmount"); //OutputAmount
+
 
         button.addEventListener("click", () => {
             OutPutparty.innerText = inputPartyName.value;
             Outputaddress.innerText = inputAddress.value;
             outPutInvoiceNumber.innerText = inputInvoiceNumber.value;
-            OutPutMobilenumber.innerHTML = inputMobileNumber.value;
+            OutPutMobilenumber.innerText = inputMobileNumber.value;
             OutPutDate.innerText = inputDate.value;
-            OutPutMailId.innerHTML = inputEmailID.value;
+            OutPutMailId.innerText = inputEmailID.value;
+            outputPrductName.innerText = inputParticulars.value;
+            let qty = Number(inputQty.value);
+            let rate = Number(inputRate.value);
+            OutputQty.innerText = qty;
+            OutPutRate.innerText = rate;
+            OutputAmount.innerText = qty * rate;
+            console.log(qty * rate);
         })
 
 
