@@ -233,12 +233,12 @@
                             <th>Amount</th>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td id="outputPrductName">Product Name</td> <!--outputPrductName-->
-                            <td id="OutputQty">10</td> <!--OutputQty-->
-                            <td id="OutPutRate">100</td> <!--OutPutrate-->
+                            <td id="outputsrNo"></td>
+                            <td id="outputPrductName"></td> <!--outputPrductName-->
+                            <td id="OutputQty"></td> <!--OutputQty-->
+                            <td id="OutPutRate"></td> <!--OutPutrate-->
                             <td>
-                                <p id="OutputAmount">Amount</p>
+                                <p id="OutputAmount"></p>
                                 <div class="mainbox1">
                                     <div class="mainbox">
                                         <div class="box">
@@ -299,23 +299,50 @@
         let OutputQty = document.getElementById("OutputQty"); //OutputQty
         let OutPutRate = document.getElementById("OutPutRate") //OutPutRate
         let OutputAmount = document.getElementById("OutputAmount"); //OutputAmount
+        let outputsrNo = document.getElementById("outputsrNo") //outputsrNo
 
+        // 1. First, add an ID to your table or tbody so we know where to add rows
+        // In your HTML, change <table> to <table id="invoiceTable">
+
+        let grandTotal = 0;
+        let serialNo = 1;
 
         button.addEventListener("click", () => {
+            // 1. Update Header Info
             OutPutparty.innerText = inputPartyName.value;
             Outputaddress.innerText = inputAddress.value;
             outPutInvoiceNumber.innerText = inputInvoiceNumber.value;
             OutPutMobilenumber.innerText = inputMobileNumber.value;
             OutPutDate.innerText = inputDate.value;
             OutPutMailId.innerText = inputEmailID.value;
-            outputPrductName.innerText = inputParticulars.value;
+
+            // 2. Calculations
             let qty = Number(inputQty.value);
             let rate = Number(inputRate.value);
-            OutputQty.innerText = qty;
-            OutPutRate.innerText = rate;
-            OutputAmount.innerText = qty * rate;
-            console.log(qty * rate);
-        })
+            let total = qty * rate;
+            
+
+            // 3. Create "List Items" for each column
+            // We wrap each entry in a div to ensure they appear on new lines
+            const createItem = (value) => `<div class="item-entry">${value}</div>`;
+
+            outputsrNo.innerHTML += createItem(serialNo++);
+            outputPrductName.innerHTML += createItem(inputParticulars.value);
+            OutputQty.innerHTML += createItem(qty);
+            OutPutRate.innerHTML += createItem(rate);
+
+             if(total > 100000) {
+                OutputAmount.innerHTML +=  createItem("aukat me rah")
+            }
+            else {
+                OutputAmount.innerHTML += createItem(total.toFixed(2));
+            }
+            
+            // 4. Clear item inputs for next entry
+            inputParticulars.value = "";
+            inputQty.value = "";
+            inputRate.value = "";
+        });
     </script>
 </body>
 
