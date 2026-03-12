@@ -320,7 +320,7 @@
             let qty = Number(inputQty.value);
             let rate = Number(inputRate.value);
             let total = qty * rate;
-            
+
 
             // 3. Create "List Items" for each column
             // We wrap each entry in a div to ensure they appear on new lines
@@ -330,14 +330,12 @@
             outputPrductName.innerHTML += createItem(inputParticulars.value);
             OutputQty.innerHTML += createItem(qty);
             OutPutRate.innerHTML += createItem(rate);
+            OutputAmount.innerHTML += createItem(total.toFixed(2));
 
-             if(total > 100000) {
-                OutputAmount.innerHTML +=  createItem("aukat me rah")
-            }
-            else {
-                OutputAmount.innerHTML += createItem(total.toFixed(2));
-            }
-            
+
+
+
+
             // 4. Clear item inputs for next entry
             inputParticulars.value = "";
             inputQty.value = "";
