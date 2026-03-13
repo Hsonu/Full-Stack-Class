@@ -76,7 +76,7 @@
 
 <body>
     <div ID="DIV">
-        <input class="text"  readonly type="input" placeholder="0">
+        <input class="text" type="input" placeholder="0">
         <div>
             <button class="operator" onclick="allclear()">AC</button>
             <button class="operator" onclick="Del()">DEL</button>
@@ -111,26 +111,25 @@
     <script>
         let display = document.querySelector('.text');
 
-        function press(value){
+        function press(value) {
             display.value += value;
         }
-
-        function calculater (){
+        function calculater() {
             display.value = eval(display.value);
         }
-        function allclear(){
+        function allclear() {
             display.value = ""
         }
-        function Del(value1) {
-            display.value -= value1;
+        function Del() {
+            display.value = display.value.slice(0, -1)
         }
-        function percent (value) {
+        function percent(value) {
             display.value = display.value / 100;
         }
-
 
     </script>
 
 
 </body>
+
 </html>
