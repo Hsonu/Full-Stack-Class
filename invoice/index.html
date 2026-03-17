@@ -45,6 +45,7 @@
         #sectionOutPut {
             display: flex;
             justify-content: center;
+            padding: 10px;
         }
 
         .outPutFrom {
@@ -127,6 +128,33 @@
         .mainbox1 {
             margin-top: 24vw;
         }
+
+        #maindiv {
+            display: flex;
+            border: 1px solid black;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        #tdiv {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #inputLastDiv {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        input {
+            width: 14vw;
+            padding: 6px
+        }
+        button{
+                width: 15vw;
+        }
     </style>
 </head>
 
@@ -134,45 +162,52 @@
     <div>
         <header>
             <form>
-                <div>
-                    <div>
-                        <p>Name</p>
-                        <input id="inputPartyName" type="text" placeholder="Name"> <!--OutPutparty Name-->
+                <div id="maindiv">
+                    <div id="tdiv">
+                        <div>
+                            <p>Name</p>
+                            <input id="inputPartyName" type="text" placeholder="Name"> <!--OutPutparty Name-->
+                        </div>
+                        <div>
+                            <p>address</p>
+                            <input id="inputAddress" type="text" placeholder="address"> <!--Outputaddress-->
+                        </div>
+                        <div>
+                            <P>Invoice No.:</P>
+                            <input id="inputInvoiceNumber" type="text" placeholder="Invoice"> <!--inputInvoiceNumber-->
+                        </div>
+                        <div>
+                            <p>Mobile</p>
+                            <input id="inputMobileNumber" type="number" placeholder="Mobile"> <!--inputMobileNumber-->
+                        </div>
+
+                        <div>
+                            <p>Email</p>
+                            <input id="inputEmailID" type="email" placeholder="Email"> <!--inputEmailID-->
+                        </div>
                     </div>
-                    <div>
-                        <p>address</p>
-                        <input id="inputAddress" type="text" placeholder="address"> <!--Outputaddress-->
+                    <div id="inputLastDiv">
+                        <div>
+                            <p>Date</p>
+                            <input id="inputDate" type="date" placeholder="Email"> <!--inputDate-->
+                        </div>
+                        <div>
+                            <p>Particulars</p>
+                            <input id="inputParticulars" type="text" placeholder="Particulars">
+                            <!-- input Particulars-->
+                        </div>
+                        <div>
+                            <p>Qty</p>
+                            <input id="inputQty" type="text" placeholder="Qty"> <!--inputQty-->
+                        </div>
+                        <div>
+                            <p>Rate</p>
+                            <input id="inputRate" type="text" placeholder="Rate"> <!--input Rate-->
+                        </div>
+                        <button type="button" id="button">Check</button>
                     </div>
-                    <div>
-                        <P>Invoice No.:</P>
-                        <input id="inputInvoiceNumber" type="text" placeholder="Invoice"> <!--inputInvoiceNumber-->
-                    </div>
-                    <div>
-                        <p>Mobile</p>
-                        <input id="inputMobileNumber" type="number" placeholder="Mobile"> <!--inputMobileNumber-->
-                    </div>
-                    <div>
-                        <p>Email</p>
-                        <input id="inputEmailID" type="email" placeholder="Email"> <!--inputEmailID-->
-                    </div>
-                    <div>
-                        <p>Date</p>
-                        <input id="inputDate" type="date" placeholder="Email"> <!--inputDate-->
-                    </div>
-                    <div>
-                        <p>Particulars</p>
-                        <input id="inputParticulars" type="text" placeholder="Particulars"> <!-- input Particulars-->
-                    </div>
-                    <div>
-                        <p>Qty</p>
-                        <input id="inputQty" type="text" placeholder="Qty"> <!--inputQty-->
-                    </div>
-                    <div>
-                        <p>Rate</p>
-                        <input id="inputRate" type="text" placeholder="Rate"> <!--input Rate-->
-                    </div>
+
                 </div>
-                <button type="button" id="button">Check</button>
             </form>
         </header>
         <section id="sectionOutPut">
