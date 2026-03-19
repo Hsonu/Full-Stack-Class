@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+      padding: 0;
+        margin: 0;
+        background: linear-gradient(120deg, #f5dcdc, #e6f0ff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #main {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #button1 {
+        background-color: #95d895;
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 0px 0px 4px 0px;
+        width: 5vw;
+    }
+
+    #button1:hover {
+        box-shadow: 0px 0px 4px 0px;
+        background-color: #5fd65f;
+        cursor: pointer;
+    }
+
+    #main1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #outPut {
+        background-color: green;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <p>Name</p>
+        <input id="inputText" type="text" placeholder="Name">
+        <button id="button1">Add</button>
+
+
+    </div>
+    <div id="main1">
+        <div id="outPut"></div>
+    </div>
+
+    <script>
+        let outPut = document.getElementById("outPut");
+        let inputText = document.getElementById("inputText");
+        let button1 = document.getElementById("button1");
+
+        let task = [];
+
+        button1.addEventListener("click", () => {
+            let value = inputText.value;
+
+            if (value === "") {
+                alert("Please enter a name");
+                return;
+            }
+
+            task.push(value);
+            inputText.value = ""; // clear input
+
+            displayTask();
+        });
+
+        function displayTask() {
+            outPut.innerHTML = "";
+
+            task.forEach((item, index) => {
+                outPut.innerHTML += `
+                    <div>
+                        ${item}
+                        <button id="deletebtn" onclick="deleteTask(${index})">Delete</button>
+                    </div>
+                `;
+            });
+        }
+        function deleteTask(index) {
+            task.splice(index, 1);
+            displayTask();
+        }
+    </script>
+</body>
+</body>
+
+</html>
