@@ -1,103 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task List</title>
+
 <style>
     body {
-      padding: 0;
         margin: 0;
-        background: linear-gradient(120deg, #f5dcdc, #e6f0ff);
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        font-family: sans-serif;
+        background: linear-gradient(120deg, #f5dcdc, #e6f0ff);
+    }
+
+    .container {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        width: 320px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 15px;
     }
 
     #main {
         display: flex;
-        justify-content: center;
         gap: 10px;
+    }
+
+    #inputText {
+        flex: 1;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    #inputText:focus {
+        border-color: #28a745;
     }
 
     #button1 {
         background-color: #95d895;
-        border: 1px solid black;
-        border-radius: 10px;
-        box-shadow: 0px 0px 4px 0px;
-        width: 5vw;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-weight: bold;
     }
 
     #button1:hover {
-        box-shadow: 0px 0px 4px 0px;
         background-color: #5fd65f;
-        cursor: pointer;
-    }
-
-    #main1 {
-        display: flex;
-        justify-content: center;
     }
 
     #outPut {
-        background-color: green;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .task-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #82e0c4;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .task-item:hover {
+        transform: scale(1.02);
+    }
+
+    .completed {
+        text-decoration: line-through;
+        background-color: #28a745;
+        color: white;
+    }
+
+    .delete-btn {
+        background: none;
+        border: none;
+        color: red;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .delete-btn:hover {
+        color: darkred;
+    }
+
+    .footer {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        text-align: center;
+        color: #555;
     }
 </style>
+</head>
 
 <body>
+
+<div class="container">
+    <h2>Task List</h2>
+
     <div id="main">
-        <p>Name</p>
-        <input id="inputText" type="text" placeholder="Name">
+        <input id="inputText" type="text" placeholder="Enter task...">
         <button id="button1">Add</button>
-
-
-    </div>
-    <div id="main1">
-        <div id="outPut"></div>
     </div>
 
-    <script>
-        let outPut = document.getElementById("outPut");
-        let inputText = document.getElementById("inputText");
-        let button1 = document.getElementById("button1");
+    <div id="outPut"></div>
 
-        let task = [];
+    <div class="footer">
+        Tasks saved automatically 💾
+    </div>
+</div>
 
-        button1.addEventListener("click", () => {
-            let value = inputText.value;
+<script>
+    let outPut = document.getElementById("outPut");
+    let inputText = document.getElementById("inputText");
+    let button1 = document.getElementById("button1");
 
-            if (value === "") {
-                alert("Please enter a name");
-                return;
+    // Load saved tasks
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    // Save tasks
+    function saveTasks() {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    // Add task
+    button1.addEventListener("click", addTask);
+
+    // Enter key support
+    inputText.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            addTask();
+        }
+    });
+
+    function addTask() {
+        let value = inputText.value.trim();
+
+        if (value === "") {
+            alert("Please enter a task");
+            return;
+        }
+
+        tasks.push({ name: value, done: false });
+        inputText.value = "";
+
+        saveTasks();
+        displayTask();
+    }
+
+    function displayTask() {
+        outPut.innerHTML = "";
+
+        tasks.forEach((task, index) => {
+            let div = document.createElement("div");
+            div.classList.add("task-item");
+
+            if (task.done) {
+                div.classList.add("completed");
             }
 
-            task.push(value);
-            inputText.value = ""; // clear input
+            let p = document.createElement("p");
+            p.textContent = task.name;
 
-            displayTask();
-        });
+            let btn = document.createElement("button");
+            btn.textContent = "✕";
+            btn.classList.add("delete-btn");
 
-        function displayTask() {
-            outPut.innerHTML = "";
-
-            task.forEach((item, index) => {
-                outPut.innerHTML += `
-                    <div>
-                        ${item}
-                        <button id="deletebtn" onclick="deleteTask(${index})">Delete</button>
-                    </div>
-                `;
+            // Toggle complete
+            div.addEventListener("click", () => {
+                tasks[index].done = !tasks[index].done;
+                saveTasks();
+                displayTask();
             });
-        }
-        function deleteTask(index) {
-            task.splice(index, 1);
-            displayTask();
-        }
-    </script>
-</body>
-</body>
 
+            // Delete task
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                tasks.splice(index, 1);
+                saveTasks();
+                displayTask();
+            });
+
+            div.appendChild(p);
+            div.appendChild(btn);
+            outPut.appendChild(div);
+        });
+    }
+
+    // Initial render
+    displayTask();
+</script>
+
+</body>
 </html>
