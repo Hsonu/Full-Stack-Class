@@ -7,87 +7,92 @@
     <title>Admin Panel</title>
 
     <style>
-       * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
 
-/* Layout */
-#main {
-    display: flex;
-}
+        /* Layout */
+        #main {
+            display: flex;
+        }
 
-/* Sidebar */
-#sidebar {
-    width: 220px;
-    height: 100vh;
-    background: #222d32;
-    color: white;
-}
+        /* Sidebar */
+        #sidebar {
+            width: 220px;
+            height: 100vh;
+            background: #222d32;
+            color: white;
+        }
 
-#sidebar h2 {
-    padding: 15px;
-    background: #1a2226;
-}
+        #sidebar h2 {
+            padding: 15px;
+            background: #1a2226;
+        }
 
-#sidebar ul {
-    list-style: none;
-}
+        #sidebar ul {
+            list-style: none;
+        }
 
-#sidebar ul li {
-    padding: 12px 15px;
-    border-bottom: 1px solid #2c3b41;
-    cursor: pointer;
-}
+        #sidebar ul li {
+            padding: 12px 15px;
+            border-bottom: 1px solid #2c3b41;
+            cursor: pointer;
+        }
 
-#sidebar ul li:hover {
-    background: #1e282c;
-}
+        #sidebar ul li:hover {
+            background: #1e282c;
+        }
 
-/* Content Area */
-#div1 {
-    padding: 20px;
-}
+        /* Content Area */
+        #div1 {
+            padding: 20px;
+        }
 
-/* Form Layout */
-.box1 {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
+        /* Form Layout */
+        .box1 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-.box1 p {
-    width: 120px;
-}
+        .box1 p {
+            width: 120px;
+        }
 
-.box1 input {
-    padding: 5px;
-    flex: 1;
-}
+        .box1 input {
+            padding: 5px;
+            flex: 1;
+        }
 
-/* Button */
-button {
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: #00a65a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        /* Button */
+        button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #00a65a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-button:hover {
-    background: #008d4c;
-}
+        button:hover {
+            background: #008d4c;
+        }
 
-/* Links */
-#Dashboard,
-#orderText {
-    text-decoration: none;
-    color: #fff;
-}
+        /* Links */
+        #Dashboard,
+        #orderText {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        input {
+            border-radius: 5px;
+            border: 1px solid black;
+        }
     </style>
 </head>
 
@@ -101,7 +106,7 @@ button:hover {
                     <li>Dashboard</li>
                 </a>
                 <a id="orderText" href="./Order.html">
-                    <li>Order</li>
+                    <li>Product</li>
                 </a>
                 <li>Orders</li>
                 <li>Products</li>
@@ -111,26 +116,31 @@ button:hover {
         <div id="div1">
             <div class="box1">
                 <p> Product Name</p>
-                <input type="text">
+                <input placeholder="Product Name" type="text">
             </div>
             <div class="box1">
                 <p>Category</p>
-                <input type="text">
+                <input placeholder="Category" type="text">
             </div>
             <div class="box1">
                 <p>Pcs</p>
-                <input type="number">
+                <input placeholder="Pcs"  type="number">
             </div>
             <div class="box1">
                 <p>Rate</p>
-                <input type="number">
+                <input placeholder="Rate" type="number">
             </div>
             <div class="box1">
                 <p>Total</p>
-                <input readonly type="text">
+                <input placeholder="Total" readonly type="text">
+            </div>
+            <div class="box1">
+                <p>Description</p>
+                <input placeholder="Description" type="text">
             </div>
             <button>Save</button>
         </div>
     </div>
 </body>
+
 </html>
