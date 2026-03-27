@@ -119,41 +119,34 @@
             transition: 0.3s;
         }
 
-        /* Add Product */
-        #div1 button:nth-child(1) {
-            background: #00a65a;
-        }
-
-        #div1 button:nth-child(1):hover {
-            background: #008d4c;
-        }
-
-        /* Edit Product */
-        #div1 button:nth-child(2) {
-            background: #f39c12;
-        }
-
-        #div1 button:nth-child(2):hover {
-            background: #d68910;
-        }
-
-        /* Update Product */
-        #div1 button:nth-child(3) {
-            background: #3c8dbc;
-        }
-
-        #div1 button:nth-child(3):hover {
-            background: #2e6da4;
-        }
-
         #Status,
         #orderText {
             text-decoration: none;
             color: #fff;
         }
 
-        edit {
-            background-color: #f39c12;
+        .add {
+            background: #00a65a;
+        }
+
+        .add:hover {
+            background: #008d4c;
+        }
+
+        .edit {
+            background: #f39c12;
+        }
+
+        .edit:hover {
+            background: #d68910;
+        }
+
+        .update {
+            background: #3c8dbc;
+        }
+
+        .update:hover {
+            background: #2e6da4;
         }
     </style>
 </head>
@@ -177,9 +170,10 @@
         </div>
         <div id="div1">
             <a href="./addProduct.html"> <button class="add">Add Product</button></a>
-            <button id="edit">Edit Product</button></a>
-            <button class="update">Update Product</button>
+            <a href="./EditProduct.html"> <button class="edit">Update Product</button></a>
+            <!-- <button class="update">Update Product</button> -->
         </div>
     </div>
 </body>
+
 </html>
