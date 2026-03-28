@@ -46,12 +46,18 @@
             background: #1e282c;
         }
 
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
         /* Content Area */
         #div1 {
             padding: 20px;
+            width: 100%;
         }
 
-        /* Form Layout */
+        /* Form */
         .box1 {
             display: flex;
             align-items: center;
@@ -64,7 +70,9 @@
 
         .box1 input {
             padding: 5px;
-            flex: 1;
+            border-radius: 5px;
+            border: 1px solid black;
+            width: 20vh;
         }
 
         /* Button */
@@ -82,67 +90,176 @@
             background: #008d4c;
         }
 
-        /* Links */
-        #Dashboard,
-        #orderText {
-            text-decoration: none;
-            color: #fff;
+        /* ===== SECTION ===== */
+
+        .maindivOrder {
+            margin-top: 20px;
+            box-shadow: 0px 0px 2px 0px #93f02d;
+            overflow-x: auto;
         }
 
-        input {
-            border-radius: 5px;
-            border: 1px solid black;
+        .statusProduct {
+            display: grid;
+            grid-template-columns: repeat(9, minmax(120px, 1fr));
+            text-align: center;
+        }
+
+        .statusProduct p {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .header p {
+            background: #f9f9f9;
+            font-weight: bold;
+        }
+
+        .row p {
+            background: #fff;
+        }
+
+        #jpg1 {
+            height: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
+
     <div id="main">
+
         <!-- Sidebar -->
         <div id="sidebar">
             <h2>Admin Panel</h2>
             <ul>
-                <a id="Dashboard" href="../Dashboard.html">
+                <a href="../Dashboard.html">
                     <li>Dashboard</li>
                 </a>
-                <a id="orderText" href="./Order.html">
+                <a href="./addProduct.html">
                     <li>Product</li>
                 </a>
-                <li>Status</li>
+                <a href="./status.html">
+                    <li>Status</li>
+                </a>
             </ul>
         </div>
+
+        <!-- Content -->
         <div id="div1">
+
+            <!-- FORM -->
             <div class="box1">
-                <p> Product Name</p>
-                <input placeholder="Product Name" type="text">
+                <p>Product Name</p>
+                <input id="inputProductName" type="text"> <!--input inputProductName-->
             </div>
+
             <div class="box1">
                 <p>Category</p>
-                <input placeholder="Category" type="text">
+                <input id="inputCategoryName" type="text"><!--inputCategoryName-->
             </div>
+
             <div class="box1">
                 <p>Units</p>
-                <input placeholder="Units"  type="number">
+                <input id="inputUnits" type="number"><!--inputUnits-->
             </div>
+
             <div class="box1">
                 <p>Rate</p>
-                <input placeholder="Rate" type="number">
+                <input id="inputRate" type="number"> <!--inputRate-->
             </div>
+
             <div class="box1">
                 <p>Total</p>
-                <input placeholder="Total" readonly type="text">
+                <input id="total" readonly type="text"> <!--Total OutPut-->
             </div>
+
             <div class="box1">
                 <p>Description</p>
-                <input placeholder="Description" type="text">
+                <input id="inputDescription" type="text"> <!--inputDescription-->
             </div>
-             <div class="box1">
+
+            <div class="box1">
                 <p>Image</p>
-                <input placeholder="Description" type="file">
+                <input type="file">
             </div>
-            <button>Save</button>
+
+            <button id="SaveBtn">Save</button> <!--SaveBtn-->
+
+            <!-- ===== SECTION (NOW BELOW BUTTON) ===== -->
+            <section>
+                <div class="maindivOrder">
+
+                    <!-- Header -->
+                    <div class="statusProduct header">
+                        <p>Edit</p>
+                        <p>Product Name</p>
+                        <p>Category</p>
+                        <p>Units</p>
+                        <p>Rate</p>
+                        <p>Amount</p>
+                        <p>Status</p>
+                        <p>Address</p>
+                        <p>Order Date</p>
+                    </div>
+
+                    <!-- Row -->
+                    <div class="statusProduct row">
+                        <p><img id="jpg1" src="https://img.icons8.com/?size=256&id=114170&format=png"></p>
+                        <p id="outputPrductName">iPhone 17 Pro Max (Silver, 2 TB)</p> <!--outputPrductName-->
+                        <p id="outPutCategoryName">Electronics</p><!--outPutCategoryName-->
+                        <p id="outPutUnits">1</p> <!--outPutUnits-->
+                        <p id="OutPutRate">₹2,29,900</p> <!--OutPutRate-->
+                        <p id="OutputAmount">₹2,29,900</p><!--OutputAmount-->
+                        <p id="outputOrderStatus">Order placed</p><!--outputOrderStatus-->
+                        <p id="Outputaddress">Address</p> <!--Outputaddress-->
+                        <p id="OutPutDate">25/03/2026</p><!--OutPutDate-->
+                    </div>
+
+                </div>
+            </section>
+
         </div>
     </div>
+
+    <script>
+
+        //Input
+        let inputProductName = document.getElementById("inputProductName"); //inputProductName
+        let inputCategoryName = document.getElementById("inputCategoryName"); //inputCategoryName
+        let inputUnits = document.getElementById("inputUnits"); //inputUnits
+        let inputRate = document.getElementById("inputRate"); //inputRate
+        let inputDescription = document.getElementById("inputDescription"); //inputDescription
+        let SaveBtn = document.getElementById("SaveBtn") //SaveBtn
+        //OutPut
+        let outputOrderStatus = document.getElementById("outputOrderStatus") //outputOrderStatus
+        let outPutCategoryName = document.getElementById("outPutCategoryName") //outPutCategoryName
+        let outPutUnits = document.getElementById("outPutUnits") //outPutUnits
+        let OutPutRate = document.getElementById("OutPutRate") // outPutRate
+        let Outputaddress = document.getElementById("Outputaddress") //Outputaddress
+        let outputPrductName = document.getElementById("outputPrductName") //outputPrductName
+        let OutputAmount = document.getElementById("OutputAmount");
+
+        SaveBtn.addEventListener("click", () => {
+
+            if (inputCategoryName.value === "" || inputProductName.value === "" || inputRate.value === "" || inputUnits.value === "") {
+                alert("Fill In The blank");
+
+            } else {
+                let rate = inputRate.value;
+                let units = inputUnits.value;
+                outputPrductName.innerHTML = inputProductName.value;
+                Outputaddress.innerHTML = inputCategoryName.value;
+                let Amount = rate * units
+                OutputAmount.innerHTML = "₹" + Amount;
+                outPutUnits.innerHTML = "₹" + units;
+                OutPutRate.innerHTML = "₹" + rate;
+                outPutCategoryName.innerHTML = inputCategoryName.value;
+            }
+        })
+
+    </script>
+
 </body>
 
 </html>
