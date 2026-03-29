@@ -245,26 +245,41 @@
         let outputPrductName = document.getElementById("outputPrductName") //outputPrductName
         let OutputAmount = document.getElementById("OutputAmount");
 
-        SaveBtn.addEventListener("click", () => {
+        SaveBtn.addEventListener("click", async () => {
 
             if (inputCategoryName.value === "" || inputProductName.value === "" || inputRate.value === "" || inputUnits.value === "") {
                 alert("Fill In The blank");
-
+                return;
             } else {
-                let rate = inputRate.value;
-                let units = inputUnits.value;
+                let rate = Number(inputRate.value);
+                let units = Number(inputUnits.value);
                 outputPrductName.innerHTML = inputProductName.value;
                 Outputaddress.innerHTML = inputCategoryName.value;
                 let Amount = rate * units
                 OutputAmount.innerHTML = "₹" + Amount;
-                outPutUnits.innerHTML = "₹" + units;
+                outPutUnits.innerHTML = units;
                 OutPutRate.innerHTML = "₹" + rate;
                 outPutCategoryName.innerHTML = inputCategoryName.value;
             }
+
+            const data = {
+                productName: inputProductName.value,
+                category: inputCategoryName.value,
+                rate: Number(inputRate.value),
+                units: Number(inputUnits.value),
+                description: inputDescription.value
+            }
+            let response = await fetch("http://localhost:8080/addProduct", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+            let result = await response.json();
+            console.log(result);
+            alert("Data saved")
         })
-
     </script>
-
 </body>
-
 </html>

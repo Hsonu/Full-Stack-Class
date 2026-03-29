@@ -18,3 +18,5 @@ db.on("disconnected", () => {
 db.on("error", (err) => {
     console.log(err);
 })
+
+module.exports = db;

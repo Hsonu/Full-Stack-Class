@@ -3,15 +3,16 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
     productName: {
         type: String,
-        required : true
+        required: true,
+        unique: true
     },
     category: {
         type: String,
-        required :true
+        required: true
     },
     units: {
         type: Number,
-        required : true
+        required: true
     },
     rate: {
         type: Number,
@@ -21,7 +22,7 @@ const productSchema = new mongoose.Schema({
         type: String,
     }
 })
+productSchema.index({ productName: 1 }, { unique: true });
+const addProduct = mongoose.model("addProduct", productSchema);
 
-const addProduct = mongoose.model("addProduct" , productSchema);
-
-module.exports = addProduct;
+module.exports = addProduct; 
