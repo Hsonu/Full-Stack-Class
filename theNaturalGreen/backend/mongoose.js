@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const URL = "mongodb://localhost:27018/theNaturakGreenAddProduct"
-
+const URL = "mongodb://localhost:27017/theNaturakGreenAddProduct"
+        
 
 mongoose.connect(URL)
 

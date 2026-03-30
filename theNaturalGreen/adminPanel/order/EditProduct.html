@@ -152,13 +152,13 @@
             let res = await fetch("http://localhost:8080/backeddata")
             let data = await res.json()
             console.log(data);
-            showDate(data)
+            showDate(data)  
         }
         getData()
         function showDate(data) {
             let showDateTable = document.getElementById("showDateTable")
 
-            showDateTable.innerHTML = ""
+            // showDateTable.innerHTML = ""
             data.forEach((item) => {
                 let totalAmount = item.units * item.rate;
 
