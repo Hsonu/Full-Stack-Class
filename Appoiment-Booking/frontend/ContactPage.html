@@ -244,19 +244,36 @@
         let submitBtn = document.getElementById("btn");
 
 
-        submitBtn.addEventListener("click", () => {
+        submitBtn.addEventListener("click", async () => {
             if (fullName.value == "" || mobileNumber.value == "" || emailId.value == "") {
                 alert("Fill In the blank")
                 return;
             }
-            else {
-
+            try {
+                const data = {
+                    FullName: fullName.value,
+                    mobileNumber: mobileNumber.value,
+                    email: emailId.value
+                }
+                let response = await fetch("http://localhost:8080/newClient", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+                let bookingDone = await response.json();
                 alert("✅Appointment Booked Successfully ✅")
+                console.log("Booking Done");
                 setTimeout(() => {
-                    location.reload
+                    location.reload();  
                 }, 100);
             }
-
+            catch (err) {
+                console.log(err);
+                alert("❌ Error aaya");
+                // alert(err);
+            }
         })
     </script>
 </body>
